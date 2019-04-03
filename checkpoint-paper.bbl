@@ -1,0 +1,168 @@
+\begin{thebibliography}{10}
+
+\bibitem{bitcoinCash}
+Bitcoincash: Peer-to-peer electronic cash.
+\newblock \url{https://www.bitcoincash.org/}.
+\newblock Accessed: 2019-01-25.
+
+\bibitem{casper}
+Casper proof of stake compendium.
+\newblock
+  \url{https://github.com/ethereum/wiki/wiki/Casper-Proof-of-Stake-compendium}.
+\newblock Accessed: 2019-02-14.
+
+\bibitem{dogecoin}
+Dogecoin.
+\newblock \url{https://dogecoin.com/}.
+\newblock Accessed: 2019-01-25.
+
+\bibitem{fincrisis}
+Financial crisis of 2007–2008.
+\newblock
+  \url{https://en.wikipedia.org/wiki/Financial_crisis_of_2007%E2%80%932008}.
+\newblock Accessed: 2019-02-11.
+
+\bibitem{gossip}
+Gossip protocol.
+\newblock \url{https://en.wikipedia.org/wiki/Gossip_protocol}.
+\newblock Accessed: 2019-03-02.
+
+\bibitem{blockchainRevolution1}
+How blockchains could change the world.
+\newblock
+  \url{https://www.mckinsey.com/industries/high-tech/our-insights/how-blockchains-could-change}.
+\newblock Accessed: 2019-01-25.
+
+\bibitem{neo}
+Neo - an open network for smart economy.
+\newblock \url{https://neo.org/}.
+\newblock Accessed: 2019-01-25.
+
+\bibitem{blockchainRevolution2}
+The next radical internet transformation: How blockchain technology is
+  transforming business, governments, computing, and security models with mark
+  mueller-eberstein.
+\newblock \url{https://learning.acm.org/webinars/blockchain}.
+\newblock Accessed: 2019-01-25.
+
+\bibitem{Back02hashcash}
+Adam Back.
+\newblock Hashcash - a denial of service counter-measure.
+\newblock Technical report, 2002.
+
+\bibitem{Barborak:1993:CPF:152610.152612}
+Michael Barborak, Anton Dahbura, and Miroslaw Malek.
+\newblock The consensus problem in fault-tolerant computing.
+\newblock {\em ACM Comput. Surv.}, 25(2):171--220, June 1993.
+
+\bibitem{Buchman2018TheLG}
+Ethan Buchman, Jae~Young Kwon, and Zarko Milosevic.
+\newblock The latest gossip on bft consensus.
+\newblock {\em CoRR}, abs/1807.04938, 2018.
+
+\bibitem{casper-gadget}
+Vitalik Buterin and Virgil Griffith.
+\newblock Casper the friendly finality gadget.
+\newblock 10 2017.
+
+\bibitem{Castro:1999:PBF:296806.296824}
+Miguel Castro and Barbara Liskov.
+\newblock Practical byzantine fault tolerance.
+\newblock In {\em Proceedings of the Third Symposium on Operating Systems
+  Design and Implementation}, OSDI '99, pages 173--186, Berkeley, CA, USA,
+  1999. USENIX Association.
+
+\bibitem{poet}
+Lin Chen, Lei Xu, Nolan Shah, Zhimin Gao, Yang Lu, and Weidong Shi.
+\newblock On security analysis of proof-of-elapsed-time (poet).
+\newblock pages 282--297, 10 2017.
+
+\bibitem{David2014TheRP}
+D.~Stalin David.
+\newblock The ripple protocol consensus algorithm.
+\newblock 2014.
+
+\bibitem{David:2018:DCW:3208446}
+Quinton David.
+\newblock {\em Dash Cryptocurrency: Why Dash Digital Currency is the
+  Cryptocurrency of the Future and How You Can Profit from It}.
+\newblock CreateSpace Independent Publishing Platform, USA, 2018.
+
+\bibitem{Fischer1983TheCP}
+Michael~J. Fischer.
+\newblock The consensus problem in unreliable distributed systems (a brief
+  survey).
+\newblock In {\em FCT}, 1983.
+
+\bibitem{patent:20180150799}
+NY~US) Koved Lawrence (Pleasantville NY~US) Hunt, Guerney D. H.
+  (Yorktown~Heights.
+\newblock Blockchain checkpoints and certified checkpoints, May 2018.
+
+\bibitem{Jalote:1994:FTD:179250}
+Pankaj Jalote.
+\newblock {\em Fault Tolerance in Distributed Systems}.
+\newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1994.
+
+\bibitem{Lamport:1982:BGP:357172.357176}
+Leslie Lamport, Robert Shostak, and Marshall Pease.
+\newblock The byzantine generals problem.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 4(3):382--401, July 1982.
+
+\bibitem{Mazières15thestellar}
+David Mazières.
+\newblock The stellar consensus protocol: A federated model for internet-level
+  consensus, 2015.
+
+\bibitem{Mazires15thestellar}
+David Mazières.
+\newblock The stellar consensus protocol: A federated model for internet-level
+  consensus, 2015.
+
+\bibitem{yac}
+Fedor Muratov, Andrei Lebedev, Nikolai Iushkevich, Bulat Nasrulin, and Makoto
+  Takemiya.
+\newblock Yac: Bft consensus algorithm for blockchain, 09 2018.
+
+\bibitem{bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock {\em Cryptography Mailing list at https://metzdowd.com}, 03 2009.
+
+\bibitem{10.1007/978-3-319-56614-6_22}
+Rafael Pass, Lior Seeman, and Abhi Shelat.
+\newblock Analysis of the blockchain protocol in asynchronous networks.
+\newblock In Jean-S{\'e}bastien Coron and Jesper~Buus Nielsen, editors, {\em
+  Advances in Cryptology -- EUROCRYPT 2017}, pages 643--673, Cham, 2017.
+  Springer International Publishing.
+
+\bibitem{7756226}
+K.~{Saito} and H.~{Yamada}.
+\newblock What’s so different about blockchain? — blockchain is a
+  probabilistic state machine.
+\newblock In {\em 2016 IEEE 36th International Conference on Distributed
+  Computing Systems Workshops (ICDCSW)}, pages 168--175, June 2016.
+
+\bibitem{FM548}
+Nick Szabo.
+\newblock Formalizing and securing relationships on public networks.
+\newblock {\em First Monday}, 2(9), 1997.
+
+\bibitem{Takashima:2018:LUG:3235215}
+Ikuya Takashima.
+\newblock {\em Litecoin: The Ultimate Guide to the World of Litecoin, Litecoin
+  Crypocurrency, Litecoin Investing, Litecoin Mining, Litecoin Guide,
+  Cryptocurrency}.
+\newblock CreateSpace Independent Publishing Platform, USA, 2018.
+
+\bibitem{Wood2014EthereumAS}
+D.~Wood.
+\newblock Ethereum: a secure decentralised generalised transaction ledger.
+\newblock 2014.
+
+\bibitem{Yu:2013:DDS:2556385}
+Shui Yu.
+\newblock {\em Distributed Denial of Service Attack and Defense}.
+\newblock Springer Publishing Company, Incorporated, 2013.
+
+\end{thebibliography}
