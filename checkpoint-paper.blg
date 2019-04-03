@@ -3,14 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: checkpoint-paper.aux
 The style file: plain.bst
 Database file #1: references.bib.bib
-Repeated entry---line 204 of file references.bib.bib
- : @article{casper
- :                ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 323 of file references.bib.bib
- : @article{yac
- :             ,
-I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in fincrisis
 Warning--to sort, need author or key in bitcoinCash
 Warning--to sort, need author or key in dogecoin
@@ -19,70 +11,52 @@ Warning--to sort, need author or key in blockchainRevolution1
 Warning--to sort, need author or key in blockchainRevolution2
 Warning--to sort, need author or key in casper
 Warning--to sort, need author or key in gossip
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1049 of file plain.bst
 Warning--empty institution in Back02hashcash
 Warning--empty journal in casper-gadget
 Warning--empty booktitle in poet
 Warning--empty booktitle in David2014TheRP
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Hunt, Guerney D. H. (Yorktown Heights, NY, US), Koved, Lawrence (Pleasantville, NY, US)" for entry patent:20180150799
-while executing---line 1090 of file plain.bst
+Warning--empty booktitle in Kroll2013TheEO
+Warning--empty journal in yac
 Warning--empty booktitle in Wood2014EthereumAS
-You've used 30 entries,
+You've used 31 entries,
             2118 wiz_defined-function locations,
-            656 strings with 8400 characters,
-and the built_in function-call counts, 7738 in all, are:
-= -- 738
-> -- 279
-< -- 4
-+ -- 124
-- -- 86
-* -- 405
-:= -- 1211
-add.period$ -- 88
-call.type$ -- 30
-change.case$ -- 129
+            666 strings with 8647 characters,
+and the built_in function-call counts, 8312 in all, are:
+= -- 801
+> -- 303
+< -- 5
++ -- 134
+- -- 94
+* -- 445
+:= -- 1301
+add.period$ -- 94
+call.type$ -- 31
+change.case$ -- 136
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 333
-empty$ -- 738
-format.name$ -- 86
-if$ -- 1699
+cite$ -- 46
+duplicate$ -- 365
+empty$ -- 776
+format.name$ -- 94
+if$ -- 1825
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 21
-newline$ -- 149
-num.names$ -- 46
-pop$ -- 238
+int.to.str$ -- 31
+missing$ -- 24
+newline$ -- 156
+num.names$ -- 48
+pop$ -- 242
 preamble$ -- 1
-purify$ -- 102
+purify$ -- 108
 quote$ -- 0
-skip$ -- 246
+skip$ -- 264
 stack$ -- 0
-substring$ -- 328
-swap$ -- 66
-text.length$ -- 4
+substring$ -- 366
+swap$ -- 75
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
-warning$ -- 13
-while$ -- 59
-width$ -- 32
-write$ -- 298
-(There were 12 error messages)
+type$ -- 116
+warning$ -- 15
+while$ -- 64
+width$ -- 33
+write$ -- 314
+(There were 15 warnings)

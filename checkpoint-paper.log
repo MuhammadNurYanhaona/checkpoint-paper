@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  2 APR 2019 15:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  3 APR 2019 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -421,46 +421,44 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-[]\OT1/ptm/m/n/10 Subsequently, Ethereum [29] demon-strated that a
+(./introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+[]\OT1/ptm/m/n/10 Subsequently, Ethereum [30] demon-strated that a
  []
 
 
-Underfull \hbox (badness 2707) in paragraph at lines 51--52
+Underfull \hbox (badness 2707) in paragraph at lines 4--5
 \OT1/ptm/m/n/10 blockchain net-work can be uti-lized as a de-cen-tral-ized
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+]) (./related-work.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 72.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 1436) in paragraph at lines 74--75
+Underfull \hbox (badness 1436) in paragraph at lines 5--6
 []\OT1/ptm/m/n/10 However, ex-ist-ing blockchain con-sen-sus pro-to-cols that
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 76--77
+Underfull \hbox (badness 1565) in paragraph at lines 7--8
 []\OT1/ptm/m/n/10 The fore-run-ner of the \OT1/ptm/m/it/10 busi-ness blockchain
  move-ment\OT1/ptm/m/n/10 ,
  []
 
-(./checkpoint-paper.bbl
+) [2] (./checkpoint-paper.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [2]
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¨ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¨ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
@@ -481,25 +479,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
-
-] (./checkpoint-paper.aux) ) 
+[3] (./checkpoint-paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4442 strings out of 492990
- 64353 string characters out of 6135005
- 135601 words of memory out of 5000000
- 7932 multiletter control sequences out of 15000+600000
+ 4449 strings out of 492990
+ 64460 string characters out of 6135005
+ 134605 words of memory out of 5000000
+ 7933 multiletter control sequences out of 15000+600000
  39449 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,35p,1337b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base
-/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmri8a.pfb>
-Output written on checkpoint-paper.pdf (3 pages, 86134 bytes).
+ 41i,8n,35p,1351b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ba
+se/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on checkpoint-paper.pdf (3 pages, 87848 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream

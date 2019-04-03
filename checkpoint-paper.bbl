@@ -88,6 +88,13 @@ Quinton David.
   Cryptocurrency of the Future and How You Can Profit from It}.
 \newblock CreateSpace Independent Publishing Platform, USA, 2018.
 
+\bibitem{Douceur:2002:SA:646334.687813}
+John~R. Douceur.
+\newblock The sybil attack.
+\newblock In {\em Revised Papers from the First International Workshop on
+  Peer-to-Peer Systems}, IPTPS '01, pages 251--260, London, UK, UK, 2002.
+  Springer-Verlag.
+
 \bibitem{Fischer1983TheCP}
 Michael~J. Fischer.
 \newblock The consensus problem in unreliable distributed systems (a brief
@@ -95,8 +102,7 @@ Michael~J. Fischer.
 \newblock In {\em FCT}, 1983.
 
 \bibitem{patent:20180150799}
-NY~US) Koved Lawrence (Pleasantville NY~US) Hunt, Guerney D. H.
-  (Yorktown~Heights.
+Guerney D.~H. Hunt and Lawrence Koved.
 \newblock Blockchain checkpoints and certified checkpoints, May 2018.
 
 \bibitem{Jalote:1994:FTD:179250}
@@ -104,17 +110,18 @@ Pankaj Jalote.
 \newblock {\em Fault Tolerance in Distributed Systems}.
 \newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1994.
 
+\bibitem{Kroll2013TheEO}
+Joshua~A. Kroll, Ian Davey, and Edward~W. Felten.
+\newblock The economics of bitcoin mining , or bitcoin in the presence of
+  adversaries.
+\newblock 2013.
+
 \bibitem{Lamport:1982:BGP:357172.357176}
 Leslie Lamport, Robert Shostak, and Marshall Pease.
 \newblock The byzantine generals problem.
 \newblock {\em ACM Trans. Program. Lang. Syst.}, 4(3):382--401, July 1982.
 
-\bibitem{Mazières15thestellar}
-David Mazières.
-\newblock The stellar consensus protocol: A federated model for internet-level
-  consensus, 2015.
-
-\bibitem{Mazires15thestellar}
+\bibitem{thestellar}
 David Mazières.
 \newblock The stellar consensus protocol: A federated model for internet-level
   consensus, 2015.
@@ -122,7 +129,8 @@ David Mazières.
 \bibitem{yac}
 Fedor Muratov, Andrei Lebedev, Nikolai Iushkevich, Bulat Nasrulin, and Makoto
   Takemiya.
-\newblock Yac: Bft consensus algorithm for blockchain, 09 2018.
+\newblock Yac: Bft consensus algorithm for blockchain.
+\newblock 09 2018.
 
 \bibitem{bitcoin}
 Satoshi Nakamoto.
