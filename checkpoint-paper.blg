@@ -11,6 +11,7 @@ Warning--to sort, need author or key in blockchainRevolution1
 Warning--to sort, need author or key in blockchainRevolution2
 Warning--to sort, need author or key in casper
 Warning--to sort, need author or key in gossip
+Warning--to sort, need author or key in powcost
 Warning--empty institution in Back02hashcash
 Warning--empty journal in casper-gadget
 Warning--empty booktitle in poet
@@ -18,45 +19,45 @@ Warning--empty booktitle in David2014TheRP
 Warning--empty booktitle in Kroll2013TheEO
 Warning--empty journal in yac
 Warning--empty booktitle in Wood2014EthereumAS
-You've used 31 entries,
+You've used 32 entries,
             2118 wiz_defined-function locations,
-            666 strings with 8647 characters,
-and the built_in function-call counts, 8312 in all, are:
-= -- 801
-> -- 303
+            669 strings with 8743 characters,
+and the built_in function-call counts, 8480 in all, are:
+= -- 818
+> -- 304
 < -- 5
-+ -- 134
++ -- 135
 - -- 94
-* -- 445
-:= -- 1301
-add.period$ -- 94
-call.type$ -- 31
-change.case$ -- 136
+* -- 450
+:= -- 1320
+add.period$ -- 97
+call.type$ -- 32
+change.case$ -- 139
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 365
-empty$ -- 776
+cite$ -- 48
+duplicate$ -- 372
+empty$ -- 799
 format.name$ -- 94
-if$ -- 1825
+if$ -- 1867
 int.to.chr$ -- 0
-int.to.str$ -- 31
+int.to.str$ -- 32
 missing$ -- 24
-newline$ -- 156
+newline$ -- 161
 num.names$ -- 48
-pop$ -- 242
+pop$ -- 252
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 110
 quote$ -- 0
-skip$ -- 264
+skip$ -- 269
 stack$ -- 0
-substring$ -- 366
-swap$ -- 75
+substring$ -- 371
+swap$ -- 76
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
-warning$ -- 15
+type$ -- 120
+warning$ -- 16
 while$ -- 64
-width$ -- 33
-write$ -- 314
-(There were 15 warnings)
+width$ -- 34
+write$ -- 323
+(There were 16 warnings)

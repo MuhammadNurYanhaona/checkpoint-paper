@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{powcost}
+Bitcoin energy consumption index.
+\newblock \url{https://digiconomist.net/bitcoin-energy-consumption}.
+\newblock Accessed: 2019-02-14.
+
 \bibitem{bitcoinCash}
 Bitcoincash: Peer-to-peer electronic cash.
 \newblock \url{https://www.bitcoincash.org/}.
