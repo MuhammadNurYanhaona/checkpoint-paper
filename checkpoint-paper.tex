@@ -40,7 +40,7 @@
 		Dhaka, Bangladesh \\
 		muhaimin.shah@konasl.com}		
 	\and
-	\IEEEauthorblockN{Muhammad Yanhaona}
+	\IEEEauthorblockN{Muhammad Nur Yanhaona}
 	\IEEEauthorblockA{\textit{Research and Development} \\
 	\textit{Kona Software Lab}\\
 		Dhaka, Bangladesh \\
@@ -49,6 +49,7 @@
 \maketitle
 
 \begin{abstract}
+Reversal of transactions due to blockchain ledger reorganization has become a major hindrance for public blockchain technologies adoption in real-world business and financial applications. Since a typical real-world product, service, or agreement cannot be backtracked; associated transactions in the blockchain ledger must also be final. This paper describes and analyzes the transaction finality solution for our proof of work (PoW) blockchain network, the Kona Blockchain Platform. Although designed for our specific platform, the ideas from the solution can be easilly adapted to achieve transaction finality in existing public blockchain networks. This paper also discusses how this can be done. To the best of our knowledge, ours is the first solution for transaction finality for blockchain networks incentivised exclusively by PoW mining.    
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -59,41 +60,19 @@ Computer Networks, peer-to-peer computing, distributed information systems
 
 \input{related-work.tex}
 
-\section{An Analysis of PoW Incentive}
-\label{s-incentive}
-From a technical perspective, Nakamoto's Bitcoin \cite{bitcoin} took the world by storm because it shows for the first time that a highly secure distributed system can be built from laissez-faire collaboration of a network of mutually-distrusted autonomous peers. Even continuous network connectivity among the peers are not required and the network-wide connection topology remains dynamic. He deemed a PoW for block mining is necessary to thwart traditional networking attacks such as the Sybil Attack \cite{Douceur:2002:SA:646334.687813} on such a system. To successfully alter a shared blockchain ledger of honest miners, an attacker has to surpass their combined mining power to construct an alternative chain that is longer; then offer it to them for synchronization. The attempt become more futile as the population of honest peers increases.
-
-The strength of information security in a blockchain network is proportional to the mining capacity of its honest peers. Therefore, from its inception, keeping honest peers interested in network participation is a central concern in blockchain technology. Nakamoto's ingeneous idea was to make participation in block mining process an economic activity \cite{Kroll2013TheEO} by rewarding a block miner for his/her PoW in terms of transaction fees and a block reward. This is the crux of the PoW incentive scheme.
-
-PoW incentive makes honest behavior the rational behavior \cite{bitcoin} in the blockchain network. This particular feat is the source of its resilience. So far no alternative to PoW incentive is proven to be equally scalable, secure, and censorship-resistant. Consequently, the largest and most-powerful blockchain networks are still PoW networks despite widespread scrutiny of PoW mining power consumption cost \cite{powcost}. Hence, transaction finality solutions should also target PoW mining based blockchain networks.
-
-Interestingly, in a PoW mining based blockchain network a consensus about an irreversible ledger state (i.e., transaction finality) cannot be established without halting the mining process, as explained in the following lemma:
-
-\begin{lemma}
-\label{l-halt}
-Transaction finality is unachievable without halting block mining in a PoW blockchain network.  
-\end{lemma}
-
-\begin{proof}
-In PoW incentive scheme, all miner activities including computation and communication are governed by rational behavior. Since there is no benefit for a peer in throwing away its local blockchain ledger version and accepting a neighbor's blockchain that has the same amount of PoW being done on it, information about alternative equaly good blockchain versions will not spreed in the network. Consequently, at any instance of time there might be as many equally good blockchain ledger versions as the number of miners. In addition, a peer cannot accurately estimate the number of currently active peers in the network. As a result, it cannot determine if its local version of the blockchain ledger is accepted by the majority. Since a rational miner can convincingly neither deduce if its own attempt to established a network-wide consensus about irrefutable blockchain ledger state will be successful nor deduce whether it will be worthwhile to throw away its own equaly good local ledger state in response to a request from a neighbor, the only rational behavior is to keep lengthening its own local ledger version. In the worst case, all miners will emulate the same behavior and the only consented state will be the genesis state and no transaction can be declared final. Hence halting block mining is essential for forcing a ledger state consensus.             
-\end{proof}                
-
-At what length of the blockchain ledger the next checkpoint consensus should be attempted must be known to all network peers beforehand since otherwise they will not know when to halt in the absence of a reliable broadcast mechanism. A simple way to achieve this is to make checkpoints periodcal to the length of the blockchain or the total amount of PoW. Another alternative is to decide the next checkpoint time as part of the consensus establishement for the current checkpoint.    
-
-An important property of transaction finality in a PoW mining based blockchain network is that given it is a requirement, the rational behavior is to halt and establish a checkpoint at intended time before attempting further progress in lengthening the blockchain. This is explained in the following lemma:
-
-\begin{lemma}
-\label{l-rationality}
-The only rational behavior is to collaborate on a checkpoint consensus when a miner's local blockchain ledger reaches the checkpoint length.       
-\end{lemma}
-
-\begin{proof}
-Without loss of generality, assume that checkpoints are set at intervals periodic to the length of the blockchain ledger. Now contrary to the proposition, assume a miner whose local blockchain ledger has reached the checkpoint length did not to attempt a checkpoint consensus and keeps mining new blocks. Since the rule is to set checkpoints at specific lengths of the blockchain, all blockchain ledger versions that are at least as long as the next checkpoint length are PoW-wise equal for the lagging behind peers regardless of their actual length. Except for the fact that it is rational for a lagging behind peer to accept the ledger version that keeps most of its own mined blocks intact. Since it can happen that the shortest chain that crossed the next checkpoint length is the chain that maximises the profits of the majority miners, the shortest chain can win the next checkpoint.          Since all blocks in the loosing chains after the checkpoint length will be dropped, it is not rational for a miner to keep mining blocks after its ledger reaches the checkpoint length without knowing that its own chain maximises the profit of majority lagging behind miners. Which it cannot do without attempting a checkpoint consensus. Thus a contradiction. 
-\end{proof}
-
+\input{pow-incentive.tex}    
 
 \section{Problem Modeling}
 \label{s-model}
+From the discussion of Section \ref{s-incentive}, we understand that the goal of the checkpoint protocol is to achieve a network-wide consensus about an irreversible and unique state of the blockchain ledger at deterministic intervals. We also understand that at the end of a checkpoint interval, there might be many miners holding different blockchain ledgers that are valid candidates to be the next checkpoint and many who are lagging behind. If we call the formers, \textit{Front-runners}, the qualitative goal of the checkpoint protocol should be as follows:
+
+\begin{quote}
+\textbf{Fairly select} a single ledger version from the front-runners \textbf{without censoring} the lagging behind miners and ensure \textbf{unaffected progression} of PoW block mining after the selection.  
+\end{quote}
+
+Our approach to the highlighed objectives is to establish each checkpoint based on a $51\%$ majority voting by the currently active network peers on front-runners' chains who reached the checkpoint candidacy state the earliest. The evidence of checkpoint selection is included in the winning chain as a checkpoint block and the proceeds for mining the checkpoint block is distributed to the peers voted to supported it. Here a balot is casted for a candidate by solving PoW puzzles on its chain state. 
+
+  
 
 \section{Checkpoint Algorithm}
 \label{s-algorithm}
