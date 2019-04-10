@@ -168,6 +168,11 @@ Ikuya Takashima.
   Cryptocurrency}.
 \newblock CreateSpace Independent Publishing Platform, USA, 2018.
 
+\bibitem{Turek:1992:MFC:136541.136542}
+John Turek and Dennis Shasha.
+\newblock The many faces of consensus in distributed systems.
+\newblock {\em Computer}, 25(6):8--17, June 1992.
+
 \bibitem{Wood2014EthereumAS}
 D.~Wood.
 \newblock Ethereum: a secure decentralised generalised transaction ledger.

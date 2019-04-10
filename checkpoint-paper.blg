@@ -19,45 +19,45 @@ Warning--empty booktitle in David2014TheRP
 Warning--empty booktitle in Kroll2013TheEO
 Warning--empty journal in yac
 Warning--empty booktitle in Wood2014EthereumAS
-You've used 32 entries,
+You've used 33 entries,
             2118 wiz_defined-function locations,
-            669 strings with 8743 characters,
-and the built_in function-call counts, 8480 in all, are:
-= -- 818
-> -- 304
+            679 strings with 8945 characters,
+and the built_in function-call counts, 8790 in all, are:
+= -- 850
+> -- 317
 < -- 5
-+ -- 135
-- -- 94
-* -- 450
-:= -- 1320
-add.period$ -- 97
-call.type$ -- 32
-change.case$ -- 139
++ -- 141
+- -- 98
+* -- 475
+:= -- 1372
+add.period$ -- 100
+call.type$ -- 33
+change.case$ -- 144
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 372
-empty$ -- 799
-format.name$ -- 94
-if$ -- 1867
+cite$ -- 49
+duplicate$ -- 383
+empty$ -- 823
+format.name$ -- 98
+if$ -- 1929
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 24
-newline$ -- 161
-num.names$ -- 48
-pop$ -- 252
+int.to.str$ -- 33
+missing$ -- 25
+newline$ -- 166
+num.names$ -- 50
+pop$ -- 255
 preamble$ -- 1
-purify$ -- 110
+purify$ -- 114
 quote$ -- 0
-skip$ -- 269
+skip$ -- 277
 stack$ -- 0
-substring$ -- 371
-swap$ -- 76
+substring$ -- 393
+swap$ -- 77
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
+type$ -- 124
 warning$ -- 16
-while$ -- 64
-width$ -- 34
-write$ -- 323
+while$ -- 68
+width$ -- 35
+write$ -- 334
 (There were 16 warnings)
