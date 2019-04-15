@@ -93,12 +93,24 @@ Quinton David.
   Cryptocurrency of the Future and How You Can Profit from It}.
 \newblock CreateSpace Independent Publishing Platform, USA, 2018.
 
+\bibitem{Ding1996}
+Yun Ding, Patrick Horster, and Holger Petersen.
+\newblock {\em A new approach for delegation using hierarchical delegation
+  tokens}, pages 128--143.
+\newblock Springer US, Boston, MA, 1996.
+
 \bibitem{Douceur:2002:SA:646334.687813}
 John~R. Douceur.
 \newblock The sybil attack.
 \newblock In {\em Revised Papers from the First International Workshop on
   Peer-to-Peer Systems}, IPTPS '01, pages 251--260, London, UK, UK, 2002.
   Springer-Verlag.
+
+\bibitem{propagation}
+Oğuzhan Ersoy, Zhijie Ren, Erkin Zekeriya, and Reginald L.~Lagendijk.
+\newblock Transaction propagation on permissionless blockchains: Incentive and
+  routing mechanisms.
+\newblock 06 2018.
 
 \bibitem{Fischer1983TheCP}
 Michael~J. Fischer.
