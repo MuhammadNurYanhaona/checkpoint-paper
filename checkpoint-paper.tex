@@ -67,6 +67,18 @@ Computer Networks, peer-to-peer computing, distributed information systems
 
 \section{Checkpoint Algorithm}
 \label{s-algorithm}
+The general description of the checkpoint protocol is as follows:
+\begin{enumerate}
+\item If a miner, $f$, reaches the checkpoint candidacy state, it creates a voting token $t_f(0)$ (0 representing the token delegation depth) from its latest heartbeat acknowledgement that proves its  $BS_f^t$.
+\item For each neighbor $n$, $f$ creates a time-stamped sub-token $t_f^{n}(1)$ dedicated for $n$ and requests a vote. This initiates a checkpoint consensus voting round.
+\item A network peer $p$ evaluates all the voting requests, $t_{f_i}^{n}(j)$s, it has received, validates the blockchain ledgers of corresponding candidates, determines voting for which candidate maximises its own profit, then casts an encoded vote for that candidate, $f_c$, by sending a payload with its next heartbeat message to the support service. Peer $p$ receives a vote acceptance acknowledgement $VA_p^t$ in return.
+\item A front-runner miner $f$ makes its own encoded vote from $t_f(0)$ and registers the vote after it receives acceptance notifications from some neighbors or after a maximum waiting time.
+\item Any peer $p$ who has voted keeps reaching out for more lagging behind neighbors by sending them voting sub-tokens made of its own $t_{f_c}^{p}(j)$ and $VA_p^t$.
+\item Until the end of the voting round, peers can keep changing their votes as they hear of better alternative to their current choice.   
+\item At the end of the voting round, peers reveal their vote to support service by supplying the decoding key for their encoded vote with their next heartbeats.
+\item If there is a single majority, support service supplies the sealing materials for the checkpoint block that the wining majority mines. The remaining others sychronize their ledgers with the majority and everyone switches back to the block mining phase.
+\item If there is no single majority then some inferior candidates are filtered using a universally known, deterministic, and fair criteria. A new voting round begins with fewer candidates. The cycle continues in this manner until a single majority consensus is reached.                              
+\end{enumerate} 
 
 \section{Fitness Analysis}
 \label{s-analysis}
