@@ -1,3 +1,54 @@
+func miningModeHeartbeatProcessor(heartbeat, miner) {
+	N = getMinerCountEstimate()
+	if (heartbeat.type == CHECKPOINT_VOTE) {
+		if (!recordedAsActive(miner)) {
+			return NACK
+		}
+		updateLastExchangeTime(miner)
+		vCert = recordEncodedVote(heartbeat.vote)
+		c = countCastBallots()
+		if (c >= N/2) {
+			initiateCheckpointConsensus()
+		}
+	} else  {
+		updateLastExchangeTime(miner)
+		ack = generateAck(heartbeat)
+		return ack	
+	}
+}
+
+
+func initiateCheckpointConsensus() {
+	
+	setHeartbeatProcessor(checkpointHeartbeatProcessor)
+	N = getMinerCountEstimate()
+	votingRoundTerminator = initCountDownCounter(N/2) 
+	consensusEstablished = false
+
+	do {
+		waitForReachingZero(votingRoundTerminator)
+
+		setHeartbeatProcessor(voteRevealHeartbeatProcessor)
+		voteRevelationCounter = initCountDownCounter(ACTIVATION_WINDOW)
+		waitForReachingZero(voteRevelationCounter)
+		
+		stat = checkForSingleMajority()
+		if (stat == true) {
+			publishResultWithSealingMaterials()
+			consensusEstablished = true
+		} else {
+			publishResultWithCandidateFilter()
+			resetCounterTo(N)
+		}
+	
+	} while(!consensusEstablished)
+
+	clearVoteDatabase()
+	updateCheckpointCounter()
+	setHeartbeatProcessor(miningModeHeartbeatProcessor)
+}
+
+
 func votingCycle(currC, currVCert, round) {
 	knownCandidates = empty
 	if (currC != nil) knownCandidates = {currC.candidate}

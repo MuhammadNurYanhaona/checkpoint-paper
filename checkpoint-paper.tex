@@ -20,6 +20,43 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 
+% for code import
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{ctable}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{setspace}
+
+\lstdefinelanguage{pseudo} {
+                morekeywords={func},
+                morekeywords={[2]if, while, for, else, break, return, in},
+                morekeywords={[3]true, false, nil},
+                morekeywords={[4]async},
+                sensitive=true,
+                morecomment=[l]{//}
+}
+
+\lstset{language=pseudo,
+                basicstyle={\scriptsize\singlespacing},
+                keywordstyle={\footnotesize\itshape\color[rgb]{0.1,0.1,0.9}},
+                keywordstyle=[2]{\footnotesize\itshape\color[rgb]{0.9,0.1,0.1}},
+                keywordstyle=[3]{\itshape\color[rgb]{0.1,0.5,0.1}},
+                keywordstyle=[4]{\bf\itshape\color[rgb]{0.2,0.5,0.9}},
+                numbers=left,
+                tabsize=4,
+                numbersep=4pt,
+                basewidth=0.48em,
+                commentstyle=\color[rgb]{0.1,0.4,0.1},
+                xleftmargin=0.3cm,
+                captionpos=b
+}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -71,17 +108,32 @@ The general description of the checkpoint protocol is as follows:
 \begin{enumerate}
 \item If a miner, $f$, reaches the checkpoint candidacy state, it creates a voting token $t_f(0)$ (0 representing the token delegation depth) from its latest heartbeat acknowledgement that proves its  $BS_f^t$.
 \item For each neighbor $n$, $f$ creates a time-stamped sub-token $t_f^{n}(1)$ dedicated for $n$ and requests a vote. This initiates a checkpoint consensus voting round.
-\item A network peer $p$ evaluates all the voting requests, $t_{f_i}^{n}(j)$s, it has received, validates the blockchain ledgers of corresponding candidates, determines voting for which candidate maximises its own profit, then casts an encoded vote for that candidate, $f_c$, by sending a payload with its next heartbeat message to the support service. Peer $p$ receives a vote acceptance acknowledgement $VA_p^t$ in return.
+\item A network peer $p$ evaluates all the voting requests, $t_{f_i}^{n}(d_{f_i})$s, it has received, validates the blockchain ledgers of corresponding candidates, determines voting for which candidate maximises its own profit, then casts an encoded vote for that candidate, $f_c$, by sending a payload with its next heartbeat message to the support service. Peer $p$ receives a vote acceptance acknowledgement $VA_p^t$ in return.
 \item A front-runner miner $f$ makes its own encoded vote from $t_f(0)$ and registers the vote after it receives acceptance notifications from some neighbors or after a maximum waiting time.
-\item Any peer $p$ who has voted keeps reaching out for more lagging behind neighbors by sending them voting sub-tokens made of its own $t_{f_c}^{p}(j)$ and $VA_p^t$.
+\item Any peer $p$ who has voted keeps reaching out for more lagging behind neighbors by sending them voting sub-tokens made of its own $t_{f_c}^{p}(d_{f_c})$ and $VA_p^t$.
 \item Until the end of the voting round, peers can keep changing their votes as they hear of better alternative to their current choice.   
 \item At the end of the voting round, peers reveal their vote to support service by supplying the decoding key for their encoded vote with their next heartbeats.
 \item If there is a single majority, support service supplies the sealing materials for the checkpoint block that the wining majority mines. The remaining others sychronize their ledgers with the majority and everyone switches back to the block mining phase.
 \item If there is no single majority then some inferior candidates are filtered using a universally known, deterministic, and fair criteria. A new voting round begins with fewer candidates. The cycle continues in this manner until a single majority consensus is reached.                              
-\end{enumerate} 
+\end{enumerate}
 
-\section{Fitness Analysis}
+Listing \ref{miner-algo} presents a reducted pseudo-code of the network peers' algorithm for the checkpoint consensus protocol. The pseudo-code does not show any error processing or malicious behavior detection.
+
+\lstset{caption=A miner's perspective of the checkpoint protocol, label=miner-algo}
+\lstinputlisting{miners-perspective.go} 
+
+Note that a voting round is self-terminating. That is, each miner can individually determine when to stop the loop of \textit{Line} \textit{8} to \textit{45} and reveal its final candidate of choice. In addition, the whole consensus process is guaranteed to converge as each voting round reduces the front-runner candidates count and ensures that all honest network peers get to know about all remaining candidates. We will discuss the termination and convergence of the algorithm along with other properties in the next section.
+
+Listing \ref{support-algo} presents a reducted pseudo-code of the support service side of the checkpoint algorithm. The vote revelation step and error processing related logic are omitted in the listing.
+
+\lstset{caption=Support service's perspective of the checkpoint protocol, label=support-algo}
+\lstinputlisting{support-service-perspective.go}
+
+Note that any heartbeat exchange with the support service involves solving a new PoW puzzle. This is done to avoid a denial of service attack on the support service by frequent heartbeats \cite{Back02hashcash}. In addition, changing an existing vote involves solving increasingly more difficult PoW challenge (\textit{Line} \textit{29} and \textit{114}). This strategy compels rational miners to be prudent about their vote change decision. Finally, the support service alternate between different heartbeat processors (\textit{Line 47, 58, 78}, and \textit{86}) based on an internal clock and the state of the ongoing checkpoint consensus process. Successive ticks of the internal clock should provide enough time for a blockchain ledger synchronization between a pair of interacting network peers and the \textit{activation window} of \textit{Line 60} should be large enough to allow all network peers to exchange at least one heartbeat message with some support service node.  
+        
+\section{Fitness Analysis of Checkpoint Protocol}
 \label{s-analysis}
+
 
 \section{Implementation Concerns}
 \label{s-implementation}
