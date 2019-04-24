@@ -42,6 +42,9 @@ func miningModeHeartbeatProcessor(heartbeat, miner) {
 
 
 func initiateCheckpointConsensus() {
+	// Once checkpoint protocol has initiated; no new front-runner can be
+	// a candidate for checkpoint after a certain time
+	scheduleCandidateListFreeze(ACTIVATION_WINDOW)
 	// launch an alternative heartbeat message processor when in the
 	// checkpoint consensus mode
 	setHeartbeatProcessor(checkpointHeartbeatProcessor)
@@ -71,9 +74,9 @@ func initiateCheckpointConsensus() {
 			// if no single majority consensus is reached in this round
 			// then publish the verifiable filtering criteria
 			publishResultWithCandidateFilter()
-			// reset the vote collection counter to allow N clock ticks 
+			// reset the vote collection counter to allow N/2 ticks 
 			// for the next round
-			resetCounterTo(N)
+			resetCounterTo(N/2)
 			// reset the heartbeat processor to vote recording mode
 			setHeartbeatProcessor(checkpointHeartbeatProcessor)
 		}
@@ -97,21 +100,24 @@ func checkpointHeartbeatProcessor(heartbeat, miner) {
 	}
 	// update the last communication time of the peer
 	updateLastExchangeTime(miner)
+	// get the next existing voter from miner specific permutation 
+	// of the voting population to suggest as candidates
+	suggestedCand = getNextFromExistingVotersOrder(miner)
 	// heartbeat from a lagging behind mining peer who does not know 
 	// about ongoing check-pointing process
 	if (heartbeat.type = MINING_HEARTBEAT) {
-		// get the next batch of existing voters from miner specific 
-		// permutation of the voting population
-		suggestedCandidates = getNextBatchFromExistingVoters(miner)
 		// update the last communication time of the peer
 		updateLastExchangeTime(miner)
+		// get information about voting round terminator counter
+		stat = getCounterStatistics()
 		// send reply
 		ack = generateAck(heartbeat)
 		chal = generateHeartbeatChallenge(heartbeat, miner)
-		return new HeartbeatAck(ack, chal, suggestedCandidates)
+		return new HeartbeatAck(ack, chal, stat, suggestedCand)
 	} else {
 		vCert = recordEncodedVote(heartbeat.vote)
 		chal = generateVoteChangeChallenge(vCert, miner)
-		return new VoteAccecptAck(vCert, chal)
+		stat = getCounterStatistics()
+		return new VoteAccecptAck(vCert, chal, stat, suggestedCand)
 	}
 }

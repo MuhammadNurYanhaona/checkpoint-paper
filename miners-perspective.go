@@ -78,3 +78,16 @@ func waitForConsensus(initialVoteCert, initialToken) {
 		}
 	}
 }
+
+// logic for determining the end of a voting round
+func roundNotEnded() {
+	// retrieve information from the latest heartbeat acknowledgement
+	stat = getLastHeartbeatAckStat()
+	// if support service has not declared that checkpoint protocol has
+	// started then checkpoint voting can continue for arbitrary long
+	if (stat.mode != CHEK_POINTING_INITATED) return true
+	// otherwise round continues until the support service checkpoint 
+	// round counter reaches 0
+	return (stat.counter > 0)
+}
+

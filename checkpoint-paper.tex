@@ -122,17 +122,49 @@ Listing \ref{miner-algo} presents a reducted pseudo-code of the network peers' a
 \lstset{caption=A miner's perspective of the checkpoint protocol, label=miner-algo}
 \lstinputlisting{miners-perspective.go} 
 
-Note that a voting round is self-terminating. That is, each miner can individually determine when to stop the loop of \textit{Line} \textit{8} to \textit{45} and reveal its final candidate of choice. In addition, the whole consensus process is guaranteed to converge as each voting round reduces the front-runner candidates count and ensures that all honest network peers get to know about all remaining candidates. We will discuss the termination and convergence of the algorithm along with other properties in the next section.
+Note that a voting round is self-terminating. Each miner individually determines when to stop voting and reveal its final candidate of choice based on a support service clock counter (\textit{Line 83}). In addition, the whole consensus process is guaranteed to converge as each voting round reduces the front-runner candidates count and ensures that all honest network peers get to know about all remaining candidates. We will discuss the termination and convergence of the algorithm along with other properties in the next section.
 
 Listing \ref{support-algo} presents a reducted pseudo-code of the support service side of the checkpoint algorithm. The vote revelation step and error processing related logic are omitted in the listing.
 
 \lstset{caption=Support service's perspective of the checkpoint protocol, label=support-algo}
 \lstinputlisting{support-service-perspective.go}
 
-Note that any heartbeat exchange with the support service involves solving a new PoW puzzle. This is done to avoid a denial of service attack on the support service by frequent heartbeats \cite{Back02hashcash}. In addition, changing an existing vote involves solving increasingly more difficult PoW challenge (\textit{Line} \textit{29} and \textit{114}). This strategy compels rational miners to be prudent about their vote change decision. Finally, the support service alternate between different heartbeat processors (\textit{Line 47, 58, 78}, and \textit{86}) based on an internal clock and the state of the ongoing checkpoint consensus process. Successive ticks of the internal clock should provide enough time for a blockchain ledger synchronization between a pair of interacting network peers and the \textit{activation window} of \textit{Line 60} should be large enough to allow all network peers to exchange at least one heartbeat message with some support service node.  
+Any heartbeat exchange with the support service involves solving a new PoW puzzle. This is done to avoid a denial of service attack on the support service by frequent heartbeats \cite{Back02hashcash}. In addition, changing an existing vote involves solving increasingly more difficult PoW challenge (\textit{Line} \textit{29} and \textit{114}). This strategy compels rational miners to be prudent about their vote change decision. 
+
+The support service alternate between different heartbeat processors (\textit{Line 50, 61, 81}, and \textit{89}) based on an internal clock and the state of the ongoing checkpoint consensus process. In particular, the first voting round remains open for $\frac{N}{2}$ clock ticks (\textit{Line 51}) and the remaining rounds run for $N - 1$ clock ticks (\textit{Line 76}). Successive ticks of the internal clock should provide enough time for a blockchain ledger synchronization between a pair of interacting network peers and the \textit{activation window}, $\Omega$, of \textit{Line 60} should be large enough to allow all network peers to exchange at least one heartbeat message with some support service node.
+
+The support service freeze the checkpoint candidate list $\Omega$ time after locally initiating the checkpoint protocol (\textit{Line 47}). Observant readers will notice that it does so without even knowing the candidates, as all votes are encoded. What this operation does is finalize the list of peers to be probed by lagging behind miners who did not vote yet.    
         
 \section{Fitness Analysis of Checkpoint Protocol}
 \label{s-analysis}
+In this section, we discuss various properties of the checkpoint protocol. Throughout this discussion we assume that $51\%$ of the network peers are honest.
+
+Since mining peers determine the end of a voting round based on a support service clock counter, it is guaranteed that each voting round will terminate at deterministic time. What remains to be proven is that the support service can unequivocally determine that some front runner peers have reached the checkpoint candidacy state, its strategy to freeze the front-runner checkpoint candidate set (\textit{Line 47}) is not exclusionary, and its round termination counter provides enough time for all rational miners to make a final voting decision in each round. Following lemmas address these concerns:     
+
+\begin{lemma}
+\label{l-proto-init}
+The support service can determine the initiation of a checkpoint consensus voting process without knowing the identities of the honest miners.  
+\end{lemma}
+\begin{proof}
+The particular problem with checkpoint protocol initiation detection is that the front-runner miners launch the consensus voting process by directly requesting their neighbors for vote without informing the support service anything about their ledgers' checkpoint candidacy state. Keeping the support service oblivious of the front-runners is important to avoid introducing any support service induced bias on the checkpoint Invarient \ref{e-2} through $BS_i^t$ values. This in turns create the problem that malicious peers can pretend that someone has reached checkpoint candidacy state by registering encoded checkpoint vote with support service even when there is no valid checkpoint candidate.
+
+However, since an honest miner will always verify the ledger of a peer requesting checkpoint vote before making a voting decision, a colluding party of lagging-behind malicious miners cannot convince an honest miner to ever vote in their favor. Since the honest miners are the majority, an invalid checkpoint candidate can never reach the consensus. So eventually, some honest miners will become front-runner and one or more honest miners will register their checkpoint vote with the support service. If $50\%$ of the currently active miners casted ballot for checkpoint then there must be at least one honest miner who is either a front-runner or containing a ledger synchronized from a valid front-runner checkpoint candidate. Therefore, support service can kick off its checkpoint vote processing rounds without doubt after receiving that many votes. 
+\end{proof}
+
+\begin{lemma}
+\label{l-cand-list}
+No new checkpoint candidate front-runner miner with non-zero chance to win consensus for its ledger can appear after $\Omega$ time of support service's protocol initiation declaration.     
+\end{lemma}
+\begin{proof}
+By the time the support service declares initiation of the checkpoint protocol, at least one honest miner has registered vote in favor of some valid checkpoint candidate. Consider the worst case of exactly one honest vote. Suppose that vote is casted in favor of front-runner miner $f$. Finally, for a contradiction, assume the first vote for another valid candidate $f^\prime$ can appears after $\Omega$ time of protocol initation declaration. 
+
+Note that $\Omega$ is large enough for all miners to exchange one heartbeat with the support service. Hence any vote casted for a previously unseen alternative front-runner candidate $f^\prime$ after $\Omega$ time of protocol initiation declaration must satisfy $BS_f^t \leq BS_{f^\prime}^t$. According to \textit{Invarient \ref{e-2}} of check-pointing, $f^\prime$ cannot win consensus. A contradiction.  
+\end{proof}
+
+\begin{lemma}
+\label{l-round-time}
+$\frac{N}{2}$ support service timer ticks are enough for any rational miner to make a final choice about front-runner checkpoint candidates in all consensus voting rounds.   
+\end{lemma}
 
 
 \section{Implementation Concerns}
