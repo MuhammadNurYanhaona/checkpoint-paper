@@ -11,10 +11,10 @@ func votingRound(currC, currVCert, round) {
 		S = getNewCandidates()
 		if (empty(S)) {
 			// if no request received then check if the support 
-			// service has provided some candidates info 
+			// service has provided some candidate info 
 			stat = getLastHeartbeatStat()
-			if (stat.candadates != nil) {
-				S = probeCandidates(stat.candidates)
+			if (stat.candadate != nil) {
+				S = {probeCandidate(stat.candidate, stat.probingToken)}
 			}
 		}
 		// in case there are malicious front-runners that are 
