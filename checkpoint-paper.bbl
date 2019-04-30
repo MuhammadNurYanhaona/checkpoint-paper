@@ -99,6 +99,11 @@ Yun Ding, Patrick Horster, and Holger Petersen.
   tokens}, pages 128--143.
 \newblock Springer US, Boston, MA, 1996.
 
+\bibitem{Dolev:1987:MSN:7531.7533}
+Danny Dolev, Cynthia Dwork, and Larry Stockmeyer.
+\newblock On the minimal synchronism needed for distributed consensus.
+\newblock {\em J. ACM}, 34(1):77--97, January 1987.
+
 \bibitem{Douceur:2002:SA:646334.687813}
 John~R. Douceur.
 \newblock The sybil attack.

@@ -104,84 +104,11 @@ Computer Networks, peer-to-peer computing, distributed information systems
 
 \input{algorithm.tex}    
         
-\section{Fitness Analysis of Checkpoint Protocol}
-\label{s-analysis}
-In this section, we discuss various properties of the checkpoint protocol. Throughout this discussion we assume that $51\%$ of the network peers are honest.
-
-Since mining peers determine the end of a voting round based on a support service clock counter, it is guaranteed that each voting round will terminate at a deterministic time. What remains to be proven is that the support service can unequivocally determine that some front runner peers have reached the checkpoint candidacy state, its strategy to freeze the front-runner checkpoint candidate set (\textit{Line 47}) is not exclusionary, and its round termination counter provides enough time for all rational miners to make a final voting decision in each round. Following lemmas address these concerns:     
-
-\begin{lemma}
-\label{l-proto-init}
-The support service can determine the initiation of a checkpoint consensus voting process without knowing the identities of the honest miners.  
-\end{lemma}
-\begin{proof}
-The particular problem with checkpoint protocol initiation detection is that the front-runner miners launch the consensus voting process by directly requesting their neighbors for vote without informing the support service anything about their ledgers' checkpoint candidacy state. Keeping the support service oblivious of the front-runners is important to avoid introducing any support service induced bias on Invariant \ref{e-2} of the checkpoint protocol through $BS_i^t$ values. This in turns create the problem that malicious peers can pretend that someone has reached checkpoint candidacy state by registering encoded checkpoint vote with support service even when there is no valid checkpoint candidate.
-
-However, since an honest miner will always verify the ledger of a peer requesting checkpoint vote before making a voting decision, a colluding party of lagging-behind malicious miners cannot convince an honest miner to ever vote in their favor. Since the honest miners are the majority, an invalid checkpoint candidate can never reach the consensus. So eventually, some honest miners will become front-runner and one or more honest miners will register their checkpoint vote with the support service. If $50\%$ of the currently active miners casted ballot for checkpoint then there must be at least one honest miner who is either a front-runner or containing a ledger synchronized from a valid front-runner checkpoint candidate. Therefore, support service can kick off its checkpoint vote processing rounds without doubt after receiving that many votes. 
-\end{proof}
-
-\begin{lemma}
-\label{l-cand-list}
-No new checkpoint candidate with non-zero chance to win consensus for its ledger can appear after $\Omega$ time of support service's protocol initiation declaration.     
-\end{lemma}
-\begin{proof}
-By the time the support service declares initiation of the checkpoint protocol, at least one honest miner has registered vote in favor of some valid checkpoint candidate. Consider the worst case of exactly one honest vote. Suppose that vote is casted in favor of front-runner miner $f$. Then assume for a contradiction that the first vote for another valid candidate $f^\prime$ can appears after $\Omega$ time of the protocol initiation declaration. 
-
-Note that $\Omega$ is large enough for all miners to exchange one heartbeat with the support service. Hence any vote casted for a previously unseen alternative front-runner candidate $f^\prime$ after $\Omega$ time of the protocol initiation declaration must satisfy $BS_f^t \leq BS_{f^\prime}^t$. According to \textit{Invariant \ref{e-2}} of check-pointing, such an $f^\prime$ cannot win consensus. A contradiction.  
-\end{proof}
-
-\begin{lemma}
-\label{l-round-time}
-$N - 1$ support service timer ticks are enough for any rational miner to make a final choice about front-runner checkpoint candidates in all consensus voting rounds.   
-\end{lemma}
-\begin{proof}
-The profit sharing scheme (Sub-section \ref{info-propagate}) for vote casted in favor of the winning candidate makes synchronizing local ledger and supplying voting sub-token to any probing peer a rational behavior. So any honest miner who has voted will respond to a probing request coming from another miner unless it is overloaded. Since the support service uses different miner specific permutations for suggesting candidate front-runners (\textit{Line 105} of Listing \ref{support-algo}) to network peers, Each miner should receive either one or no probing request per support service timer tick.
-
-Given the number of front-runner checkpoint candidate $C$ satisfies $C \leq N$, a peer has maximum $N - 1$ candidates to evaluate other than its current choice. Given each clock interval of the support service provides enough time for a full chain synchronization, a peer can probe all front-runner candidates and decide its final vote by $N - 1$ clock ticks.         
-\end{proof}
-
-That all honest network peers cast votes in each checkpoint voting round does not guarantee an eventual majority consensus. For example, consider the terminal case that each of the $N$ mining peers is a front-runner checkpoint candidate. Then it is not rational for a miner to vote for anyone except itself. Consequently, the checkpoint protocol will keep running indefinitely and never converge to a consensus. Hence, we need a criteria to reduce checkpoint candidates count in each round. The criteria we adopt is as follows:
-
-\begin{quotation}
-\textbf{Candidate Filtering Criteria:} In each voting round, the candidate with the worst header block mining time (i.e., $BS_i^t$) and the least votes will be eliminated. In case there are multiple worst candidates, the candidate with the largest header block hash (i.e., $BS_i^h$) will be eliminated.   
-\end{quotation}        
-
-Since $BS_i^h$ values arise at random based on the mined block contents of different candidates and their $BS_i^t$ values are directly comparable, the fairness of the candidate filtering criteria is self-evident. The following lemma proves that the criteria ensures a consensus in a finite time.
-
-\begin{lemma}
-\label{l-consensus}
-A consensus among the honest network peers is guaranteed within $N$ voting rounds when checkpoint candidates are being filtered with the Candidate Filtering Criteria. 
-\end{lemma}  
-\begin{proof}
-We consider the worst case that $49\%$ of the peers are malicious or irrational. If we show that a consensus can be reached even for the worst case attack scenario then it can be reached in all other cases also.
-
-Since all honest peers vote in each round, there must be at least two candidate ledgers held by the honest peers with non-zero votes in the first voting round. Otherwise, the majority honest miners are already in an agreement about a single ledger version and a consensus has been reached. 
-
-Assume that the set $H$ of honest checkpoint candidates at the end of the first round is ${f_1^h, f_2^h, \cdots, f_p^h}$. As the malicious peers can form a single or arbitrary many colluding parties, assume that malicious checkpoint candidates set $M$ is ${f_1^m, f_2^m, \cdots, f_q^m}$. Any $f_m \in M$ may have actually reached the checkpoint candidacy state or just faking it. In both cases, its ledger will never be synchronized by any honest peer. In the former case, its ledger will eventually become known to all honest miners and the peer will loose its maliciousness. In the latter case, participation in any synchronization attempt will disclose its maliciousness. The malicious peer $f_m$ can withstand successive elimination rounds by faking an arbitrarily good $BS_{f_m}^t$ value or forming larger and larger pack among the malicious peers. Its presence or elimination does not affect the voting decision of the honest peers. 
-
-Since no new candidate can appear after the first voting round and each round eliminates one checkpoint candidate, the protocol cannot run for more than $N$ rounds. We consider only those rounds where some member from $H$ is eliminated. If Round $r$ eliminates candidate $f_i^h \in H$ then all peers who voted for $f_i^h$ must vote for someone in $H - {f_i^h}$ in Round $r + 1$. Thus eliminating an honest candidate only increases the percentage votes for remaining honest candidates. So by the end of $N^{th}$ round there must be only one candidate in $H$ with all votes from the honest peers. Therefore, a consensus is established.                
-\end{proof}
-
-Lemma \ref{l-proto-init} to \ref{l-consensus} prove that our checkpoint protocol can successfully establish periodic network-wide consensus about irrefutable ledger states while maintaining the Invariants of Section \ref{s-model} among the active peer population. Concerns remain, however, about the involvement of the support service. In particular, how can the support service obstruct or compromise the checkpoint protocol? The following lemma defines the limits of support service induced attacks on the protocol.
-
-\begin{lemma}
-\label{l-support-attack}
-For authenticated communication, only a denial of service (DOS) attack  on the support service can obstruct establishment of a checkpoint consensus through a fair election process.    
-\end{lemma}
-\begin{proof}
-We accept a broader definition of the DOS attacks for the proof. We consider a DOS attack on the support service can be both external and internal. That is the support service can itself refuse to serve requests from mining peers for some internal reasons or it can be attacked by one or more malicious entities in the network so that some mining peers cannot communicate with it. 
-
-Note that the support service can never make honest peers to vote for a blockchain ledger version that has not reached the checkpoint candidacy state. This is because the peers individually validate candidate blockchain ledgers before making their voting decision. This limits support service's maliciousness to biasing the votes in favor of a particular candidate of choice only. There could be two ways of doing this. First, aiding the chosen candidate, $c$, to achieve an artificially better $BS_c^t$ value than others. Second, falsify the population size parameter $N$ to declare $c$ the checkpoint winner even if it did not really get $51\%$ majority vote from the active peer population.  
-
-Since the support service cannot determine if honest miners are approaching the next checkpoint candidacy state, making the $BS_i^t$ values of honest miners worse than $BS_c^t$ by denying heartbeat acknowledgement to honest miners is not a realistic approach.\footnote{A peer can further confuse the support service's reasoning in this matter by seeking heartbeat acknowledgements for old blocks instead of its header block at random intervals if the header is mined by others.} The only alternative is to consistently set past times in the acknowledgements for Miner $c$'s heartbeats. Unfortunately, as the $BS_c^t$ values will be reflected in the blocks $c$ mines, it cannot synchronize its intermediate ledger states with other honest miners without revealing the time anomaly. Hence, Miner $c$ must remain isolated from others, mine all blocks since the last established checkpoint upto the upcoming checkpoint candidacy state, and still reach the candidacy state before the candidate list freezes in the first checkpoint voting round. This is infeasible unless Miner $c$ individually holds $51\%$ mining power of the entire network. Then it would need to bias from the support service.      
-
-Falsifying $N$ is impossible as active peers retain heartbeat acknowledgement from support service and they can readily proof that support service is malicious if their status is not included in checkpoint block sealing material $\zeta_e$. Since each vote is encoded, the support service cannot deduce if a vote is casted in favor of Miner $c$ or not either. Albeit the support service can deny acknowledgement for any vote not casted in favor of Miner $c$ during the vote revelation steps to make Miner $c$ the checkpoint winner, it has to do so by declaring active miners inactive. That will compromise its own legitimacy to the majority honest miners.
-
-Since the support service can neither bias the voting process nor alter or drop peers' voting decisions, the only way it can be attacked or itself can affect the checkpoint protocol is by halting checkpoint consensus through refusing services.           
-\end{proof}      
+\input{fitness-analysis.tex}
 
 \section{Implementation Concerns}
 \label{s-implementation}
+
 
 \section{Conclusion}
 \label{s-conclusion}
