@@ -106,13 +106,19 @@ Computer Networks, peer-to-peer computing, distributed information systems
         
 \input{fitness-analysis.tex}
 
-\section{Implementation Concerns}
-\label{s-implementation}
-
+\input{implementation.tex}
 
 \section{Conclusion}
 \label{s-conclusion}
+Transaction finality guarantee for blockchain ledger is important for blockchain technology's adoption in recording and enforcing real world financial and business matters where actions are seldom reversible. This paper presented our transaction finality solution for the \textit{KONA blockchain network:} a proof of work (PoW) mining based public blockchain network with smart contract support and authorized mining nodes. We provide transaction finality by establishing network-wide consensus about an irreversible ledger state -- we call a \textit{checkpoint} -- at deterministic intervals. The consequent transaction finality protocol is called the \textit{checkpoint protocol}.   
+
+We introduced a notion of a distributed support service in the blockchain network that is responsible for recording heartbeat messages from the active mining peers for population estimation and for tracking the progress of the checkpoint establishment process. A network-wide consensus about a checkpoint is reached by a $51\%$ majority voting on a fair ledger election process by the active mining population and recorded through their heartbeat message exchanges with the support service.
+
+Apart from presenting our checkpoint protocol, this paper discussed the propriety of our protocol design, its theoretical soundness (in particular, its convergence characteristic), and some protocol related implementation concerns.
+      
 \subsection{Future Work}
+Like any other research, there are rooms for improvement in our work. First, in the worst case, each checkpoint establishment process requires as many voting rounds as there are miners in the network with each rounds requiring significant time. Reducing both the number of rounds and the time span of individual rounds will greatly improve the performance of the checkpoint protocol. Then checkpoints can be established quite frequently without noticeably hampering the normal block mining process. The most challenging improvement is, however, to eliminate the support service nodes altogether and modify the PoW incentive of the mining nodes in such a manner that mining nodes can change their network connectivity and participation behavior at periodic intervals to establish checkpoints on their own. We encourage interested researchers to investigate these prospective improvements.          
+   
  
 \bibliographystyle{plain}
 \bibliography{references.bib}
