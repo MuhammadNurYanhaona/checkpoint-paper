@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  2 MAY 2019 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  3 MAY 2019 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1100,10 +1100,7 @@ Overfull \hbox (5.17369pt too wide) in paragraph at lines 51--52
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ))
-(./fitness-analysis.tex [7] [8]) (./implementation.tex [9]
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
-) [10]
+(./fitness-analysis.tex [7] [8] [9]) (./implementation.tex) [10]
 (./checkpoint-paper.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\OT1/ptm/m/n/8 Bitcoin en-ergy con-sump-tion in-dex.  $https : / / digiconomi
@@ -1126,7 +1123,7 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  8658 strings out of 492990
  120156 string characters out of 6135005
- 312789 words of memory out of 5000000
+ 312790 words of memory out of 5000000
  12004 multiletter control sequences out of 15000+600000
  43848 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1146,7 +1143,7 @@ s/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on checkpoint-paper.pdf (11 pages, 231792 bytes).
+Output written on checkpoint-paper.pdf (11 pages, 233308 bytes).
 PDF statistics:
  101 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream
