@@ -30,12 +30,12 @@ BS_i^c = BS_j^c,\ \forall i \neq j\ \&\ i.j \in N
 \end{equation}
 \begin{equation}
 \label{e-3}
-\frac{\sum_i^N{\{1 \mid BS_i^h(l) = c,\ l = \Lambda(c)}\}}{N} \geq .51,\ \forall c \in C  
+\frac{\sum_{i = 1}^N{\{1 \mid BS_i^h(l) = c,\ l = \Lambda(c)}\}}{N} \geq .51,\ \forall c \in C  
 \end{equation}
 
 \textit{Invariant \ref{e-1}} says that all active network peers advance their ledger versions from a common check-pointed state, \textit{Invariant \ref{e-2}} ensures that each checkpoint is selected among the ledger versions that reached the checkpoint candidacy state the earliest, finally, \textit{Invariant \ref{e-3}} dictates that the candidate ledger version that gains $51\%$ majority support (i.e., synchronized by the majority) becomes the checkpoint. 
 
-Core underlying concerns related to maintaining these invariants are measuring the current status of the network (for estimating $N$ and comparing $B_i^t$ values), ensuring information propagation in the network for voting based consensus establishment, and sealing of a checkpoint block for permanence of the consented ledger state. The following subsections address these issues and associated matters.    
+Core underlying concerns related to maintaining these invariants are measuring the current status of the network (for estimating $N$ and comparing $BS_i^t$ values), ensuring information propagation in the network for voting based consensus establishment, and sealing of a checkpoint block for permanence of the consented ledger state. The following subsections address these issues and associated matters.    
 
 \subsection{Network Population Estimation}
 In a purely peer-to-peer blockchain, network no peer has an accurate estimate of the size of the currently active peer population, that is, the value of $N$. Thus we introduce a set of \textit{support service} nodes for active network population estimation. Addresses of these nodes are known to the mining peers. Support service nodes, or support nodes, form a distributed population status estimation service. Each mining peer exchanges periodic heartbeat messages with random support nodes. To be considered currently active and eligible for participation in the upcoming checkpoint consensus protocol, a peer must have exchanged a heartbeat with some support node within a defined time window we call the \textit{keep-alive time interval}. Assume the time-stamp of the latest heartbeat message of $Peer$ $i$ is $H_i^t$, the keep-alive time interval is $\Delta$, and the network time of the distributed support service is $\Upsilon$. Then the rule for estimating $N$ is as follows:  
