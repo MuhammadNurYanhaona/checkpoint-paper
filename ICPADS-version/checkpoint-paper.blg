@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: checkpoint-paper.aux
+The style file: plain.bst
+Database file #1: references.bib.bib
+Warning--to sort, need author or key in coinMarket
+Warning--to sort, need author or key in blockchainRevolution1
+Warning--to sort, need author or key in casper
+Warning--to sort, need author or key in gossip
+Warning--to sort, need author or key in powcost
+Warning--empty institution in Back02hashcash
+Warning--empty booktitle in poet
+Warning--empty booktitle in David2014TheRP
+Warning--can't use both author and editor fields in Ding1996
+Warning--empty booktitle in propagation
+Warning--empty booktitle in Kroll2013TheEO
+Warning--empty journal in yac
+Warning--empty booktitle in Wood2014EthereumAS
+You've used 29 entries,
+            2118 wiz_defined-function locations,
+            675 strings with 8683 characters,
+and the built_in function-call counts, 8594 in all, are:
+= -- 830
+> -- 345
+< -- 6
++ -- 149
+- -- 110
+* -- 509
+:= -- 1357
+add.period$ -- 88
+call.type$ -- 29
+change.case$ -- 139
+chr.to.int$ -- 0
+cite$ -- 42
+duplicate$ -- 367
+empty$ -- 759
+format.name$ -- 110
+if$ -- 1864
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 24
+newline$ -- 146
+num.names$ -- 50
+pop$ -- 219
+preamble$ -- 1
+purify$ -- 112
+quote$ -- 0
+skip$ -- 269
+stack$ -- 0
+substring$ -- 424
+swap$ -- 84
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 110
+warning$ -- 13
+while$ -- 73
+width$ -- 31
+write$ -- 299
+(There were 13 warnings)

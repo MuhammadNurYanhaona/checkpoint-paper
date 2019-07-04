@@ -1,0 +1,162 @@
+\begin{thebibliography}{10}
+
+\bibitem{powcost}
+Bitcoin energy consumption index.
+\newblock \url{https://digiconomist.net/bitcoin-energy-consumption}.
+\newblock Accessed: 2019-02-14.
+
+\bibitem{casper}
+Casper proof of stake compendium.
+\newblock
+  \url{https://github.com/ethereum/wiki/wiki/Casper-Proof-of-Stake-compendium}.
+\newblock Accessed: 2019-02-14.
+
+\bibitem{gossip}
+Gossip protocol.
+\newblock \url{https://en.wikipedia.org/wiki/Gossip_protocol}.
+\newblock Accessed: 2019-03-02.
+
+\bibitem{blockchainRevolution1}
+How blockchains could change the world.
+\newblock
+  \url{https://www.mckinsey.com/industries/high-tech/our-insights/how-blockchains-could-change}.
+\newblock Accessed: 2019-01-25.
+
+\bibitem{coinMarket}
+Top 100 cryptocurrencies by market capitalization.
+\newblock \url{https://coinmarketcap.com/}.
+\newblock Accessed: 2019-07-04.
+
+\bibitem{Back02hashcash}
+Adam Back.
+\newblock Hashcash - a denial of service counter-measure.
+\newblock Technical report, 2002.
+
+\bibitem{Barborak:1993:CPF:152610.152612}
+Michael Barborak, Anton Dahbura, and Miroslaw Malek.
+\newblock The consensus problem in fault-tolerant computing.
+\newblock {\em ACM Comput. Surv.}, 25(2):171--220, June 1993.
+
+\bibitem{Buchman2018TheLG}
+Ethan Buchman, Jae~Young Kwon, and Zarko Milosevic.
+\newblock The latest gossip on bft consensus.
+\newblock {\em CoRR}, abs/1807.04938, 2018.
+
+\bibitem{Castro:1999:PBF:296806.296824}
+Miguel Castro and Barbara Liskov.
+\newblock Practical byzantine fault tolerance.
+\newblock In {\em Proceedings of the Third Symposium on Operating Systems
+  Design and Implementation}, OSDI '99, pages 173--186, Berkeley, CA, USA,
+  1999. USENIX Association.
+
+\bibitem{poet}
+Lin Chen, Lei Xu, Nolan Shah, Zhimin Gao, Yang Lu, and Weidong Shi.
+\newblock On security analysis of proof-of-elapsed-time (poet).
+\newblock pages 282--297, 10 2017.
+
+\bibitem{David2014TheRP}
+D.~Stalin David.
+\newblock The ripple protocol consensus algorithm.
+\newblock 2014.
+
+\bibitem{Ding1996}
+Yun Ding, Patrick Horster, and Holger Petersen.
+\newblock {\em A new approach for delegation using hierarchical delegation
+  tokens}, pages 128--143.
+\newblock Springer US, Boston, MA, 1996.
+
+\bibitem{Dolev:1987:MSN:7531.7533}
+Danny Dolev, Cynthia Dwork, and Larry Stockmeyer.
+\newblock On the minimal synchronism needed for distributed consensus.
+\newblock {\em J. ACM}, 34(1):77--97, January 1987.
+
+\bibitem{Douceur:2002:SA:646334.687813}
+John~R. Douceur.
+\newblock The sybil attack.
+\newblock In {\em Revised Papers from the First International Workshop on
+  Peer-to-Peer Systems}, IPTPS '01, pages 251--260, London, UK, UK, 2002.
+  Springer-Verlag.
+
+\bibitem{propagation}
+Oğuzhan Ersoy, Zhijie Ren, Erkin Zekeriya, and Reginald L.~Lagendijk.
+\newblock Transaction propagation on permissionless blockchains: Incentive and
+  routing mechanisms.
+\newblock 06 2018.
+
+\bibitem{Fischer1983TheCP}
+Michael~J. Fischer.
+\newblock The consensus problem in unreliable distributed systems (a brief
+  survey).
+\newblock In {\em FCT}, 1983.
+
+\bibitem{patent:20180150799}
+Guerney D.~H. Hunt and Lawrence Koved.
+\newblock Blockchain checkpoints and certified checkpoints, May 2018.
+
+\bibitem{Jalote:1994:FTD:179250}
+Pankaj Jalote.
+\newblock {\em Fault Tolerance in Distributed Systems}.
+\newblock Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 1994.
+
+\bibitem{Kroll2013TheEO}
+Joshua~A. Kroll, Ian Davey, and Edward~W. Felten.
+\newblock The economics of bitcoin mining , or bitcoin in the presence of
+  adversaries.
+\newblock 2013.
+
+\bibitem{Lamport:1982:BGP:357172.357176}
+Leslie Lamport, Robert Shostak, and Marshall Pease.
+\newblock The byzantine generals problem.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 4(3):382--401, July 1982.
+
+\bibitem{thestellar}
+David Mazières.
+\newblock The stellar consensus protocol: A federated model for internet-level
+  consensus, 2015.
+
+\bibitem{yac}
+Fedor Muratov, Andrei Lebedev, Nikolai Iushkevich, Bulat Nasrulin, and Makoto
+  Takemiya.
+\newblock Yac: Bft consensus algorithm for blockchain.
+\newblock 09 2018.
+
+\bibitem{bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock {\em Cryptography Mailing list at https://metzdowd.com}, 03 2009.
+
+\bibitem{10.1007/978-3-319-56614-6_22}
+Rafael Pass, Lior Seeman, and Abhi Shelat.
+\newblock Analysis of the blockchain protocol in asynchronous networks.
+\newblock In Jean-S{\'e}bastien Coron and Jesper~Buus Nielsen, editors, {\em
+  Advances in Cryptology -- EUROCRYPT 2017}, pages 643--673, Cham, 2017.
+  Springer International Publishing.
+
+\bibitem{7756226}
+K.~{Saito} and H.~{Yamada}.
+\newblock What’s so different about blockchain? — blockchain is a
+  probabilistic state machine.
+\newblock In {\em 2016 IEEE 36th International Conference on Distributed
+  Computing Systems Workshops (ICDCSW)}, pages 168--175, June 2016.
+
+\bibitem{FM548}
+Nick Szabo.
+\newblock Formalizing and securing relationships on public networks.
+\newblock {\em First Monday}, 2(9), 1997.
+
+\bibitem{Turek:1992:MFC:136541.136542}
+John Turek and Dennis Shasha.
+\newblock The many faces of consensus in distributed systems.
+\newblock {\em Computer}, 25(6):8--17, June 1992.
+
+\bibitem{Wood2014EthereumAS}
+D.~Wood.
+\newblock Ethereum: a secure decentralised generalised transaction ledger.
+\newblock 2014.
+
+\bibitem{Yu:2013:DDS:2556385}
+Shui Yu.
+\newblock {\em Distributed Denial of Service Attack and Defense}.
+\newblock Springer Publishing Company, Incorporated, 2013.
+
+\end{thebibliography}

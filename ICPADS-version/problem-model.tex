@@ -1,0 +1,74 @@
+
+\section{Problem Modeling}
+\label{s-model}
+From the discussion of Section \ref{s-incentive}, we understand that the goal of the checkpoint protocol is to achieve a network-wide consensus about an irreversible and unique state of the blockchain ledger at deterministic intervals. We also understand that at the end of a checkpoint interval, there might be many miners holding different blockchain ledgers that are valid candidates to be the next checkpoint and many who are lagging behind. If we call the formers, \textit{Front-runners}, the qualitative goal of the checkpoint protocol should be as follows:
+
+\begin{quote}
+\textbf{Fairly select} a single ledger version from the front-runners \textbf{without censoring} the lagging behind miners and ensure \textbf{unaffected progression} of PoW block mining after the selection.  
+\end{quote}
+
+Our approach to the aforementioned highlighted objectives is to establish each checkpoint based on a majority voting by the currently active network peers on the chains of the front-runners who reached the checkpoint candidacy state the earliest. The evidence of checkpoint selection is included in the winning chain as a checkpoint block and the proceeds for mining the checkpoint block is distributed to the peers voted to support it. Here a vote is casted for a candidate by solving PoW puzzles on its chain state.
+
+Assume there are total $N$ active peers in the blockchain network and the current state of the local blockchain ledger version of $Peer$ $i$ is represented by $BS_i(h, l, t, c)$ where $h$ is the current header block hash, $l$ is the length of the blockchain, $t$ is the header block mining time, and $c$ is the last checkpoint block hash. Further, let $BS_i^h, BS_i^l, BS_i^t, BS_i^c$ denote the individual attributes of $Peer$ $i$'s state and $BS_i^h(n)$, $BS_i^t(n)$ refer to the header block hash and mining time when its ledger length was $n$. In addition, let $\Lambda(h)$ returns the length of the blockchain ledger and $\mathcal{T}(h)$ the time when the block with hash $h$ was mined by anyone. Finally, let $C$ denotes the set of checkpoints. Then the objective of our checkpoint protocol is to maintain the following invariants as true for all currently active network peers:
+\begin{equation}
+\label{e-1}
+BS_i^c = BS_j^c,\ \forall i \neq j\ \&\ i.j \in N
+\end{equation}
+\begin{equation}
+\label{e-2}
+\mathcal{T}(c) = \min_{i \in N}\{(\mathcal{T}(BS_i^h(l))) \mid l = \Lambda(c)\},\ \forall c \in C  
+\end{equation}
+\begin{equation}
+\label{e-3}
+\frac{\sum_{i = 1}^N{\{1 \mid BS_i^h(l) = c,\ l = \Lambda(c)}\}}{N} \geq .51,\ \forall c \in C  
+\end{equation}
+
+\textit{Invariant \ref{e-1}} says that all active network peers advance their ledger versions from a common check-pointed state, \textit{Invariant \ref{e-2}} ensures that each checkpoint is selected among the ledger versions that reached the checkpoint candidacy state the earliest, finally, \textit{Invariant \ref{e-3}} dictates that the candidate ledger version that gains $51\%$ majority support (i.e., synchronized by the majority) becomes the checkpoint. 
+
+Core underlying concerns related to maintaining these invariants are measuring the current status of the network (for estimating $N$ and comparing $BS_i^t$ values), ensuring information propagation in the network for voting based consensus establishment, and sealing of a checkpoint block for permanence of the consented ledger state. The following subsections address these issues and associated matters.    
+
+\subsection{Network Population Estimation}
+In a purely peer-to-peer blockchain network no peer has an accurate estimate of the size of the currently active peer population, that is, the value of $N$. Thus we introduce a set of \textit{support service} nodes for active network population estimation. Addresses of these nodes are known to the mining peers. Support service nodes, or support nodes, form a distributed population status estimation service. Each mining peer exchanges periodic heartbeat messages with random support nodes. To be considered currently active and eligible for participation in the upcoming checkpoint consensus protocol, a peer must have exchanged a heartbeat with some support node within a defined time window we call the \textit{keep-alive time interval}. Assume the time-stamp of the latest heartbeat message of $Peer$ $i$ is $H_i^t$, the keep-alive time interval is $\Delta$, and the network time of the distributed support service is $\Upsilon$. Then the rule for estimating $N$ is as follows:  
+\begin{equation}
+\label{e-4}
+N = \sum_{i = 0}^{i = \infty}{1 \mid \Upsilon - H_i^t \leq \Delta}
+\end{equation}
+
+Note that all attributes of $Peer$ $i$'s ledger state are self-evident except for $BS_i^t$: the mining time of the header block. The peers of a blockchain network are only very loosely time-synchronized \cite{Turek:1992:MFC:136541.136542} and a mining peer can easily advance its clock to gain advantage in the checkpoint selection process. To tackle arbitrary adjustments of the block mining time, $BS_i^t$ is derived from $Peer$ $i$'s heartbeat message timing. Peers' heartbeat messages bear their header block hash and support nodes' acknowledgements for those heartbeats bear an acknowledgement time-stamp. If the heartbeat message sequence of $Peer$ $i$ is $1, 2, \cdots M$, and $\beta(i,j)$ returns the block hash of $j^{th}$ message and $\Gamma(i, j)$ the acknowledgement time-stamp of that message then:
+\begin{equation}
+\label{e-5}
+BS_i^t = \min_{j \in \left[ 1, M \right]}\{\Gamma(i, j) | \beta(i,j) = BS_i^h \}
+\end{equation}
+The formulation of \textit{Equation \ref{e-4}} and \textit{\ref{e-5}} makes exchanging periodic heartbeat messages with support nodes a rational behavior for the mining peers.
+
+\subsection{Checkpoint Block Sealing}
+The support service also seals the checkpoint block by signing it once a majority consensus about the winning ledger version is reached. This seal is needed to ensure that even if the entire population of active mining peers is replaced, new peers cannot revert a check-pointed state. A sealed checkpoint block is a $7$-tuple of the form $\langle \zeta_h, \zeta_c, \zeta_t, \zeta_e, \zeta_v, \zeta_i \rangle$  where $\zeta_h$ is the block hash of the check-pointed ledger state, $\zeta_c$ is the current checkpoint interval counter, $\zeta_t$ is the time-stamp of the checkpoint block, $\zeta_e$ is the evidence that the $N$ estimate is accurate, $\zeta_v$ is the evidence of the majority's support for the checkpoint, and $\zeta_i$ is the next checkpoint interval length. $\zeta_c$ and $\zeta_t$ ensure that the support service cannot regress to an earlier state of the blockchain and resume checkpoint sealing from there, and $\zeta_i$ makes provision for dynamic adjustments of the checkpoint interval.
+
+Introduction of the support service raises the concern that support service nodes can bias the voting process for checkpoint consensus and consequently compromise \textit{Invariant \ref{e-1}} and \textit{\ref{e-2}}. To check against such manipulation, we limit what support service knows about the consensus process and adopt the following principle:
+
+\begin{quote}
+The support service should know about a checkpoint consensus process only after its inception and it must not know how the peers voted until the termination of a voting cycle.         
+\end{quote}
+
+The idea is that the front-runner peers should initiate the checkpoint consensus process. If it starts due to some support service action then the service can give preference to some specific front-runner by manipulating the heartbeat acknowledgement time, consequently affecting $BS_i^t$. \footnote{The support service cannot determine $BS_i^l$ from the change of $BS_i^h$ in heartbeat messages because any number of blocks may be added in \textit{Peer} $i$'s ledger between two successive heartbeat messages.}
+
+The termination constraint is required so that the support service is not tempted to drop evidences of vote for a specific chain and refuse to seal the checkpoint block if its desired front-runner is not the winner. The termination of a voting cycle must be detected and incorruptible evidence of voting decisions must be registered and shared before the support service can interpret the outcome.                          
+
+\subsection{Motivating Information Propagation}
+\label{info-propagate}
+Since all peer actions are governed by economic motives in a PoW mining based blockchain network, encouraging peer collaboration during the checkpoint establishment is an important concern. The checkpoint invariants mentioned before are insufficient in that regard because they only dictate the requirements -- not how to collaborate in achieving them.
+
+In particular, when front-runner mining nodes reach the next checkpoint target state in their respective blockchain ledgers, they are motivated to initiate a checkpoint election process. Their lagging behind neighbors are motivated to participate in the process for their own survival. However, there is no incentive for the lagging behind peers to further spread the news of the ongoing election. Consequently, a front-runner peer initiated checkpoint election process may never be heard by the majority peers, let alone reach a consensus.   
+
+We tackle this problem by incentivising information propagation specifically during the checkpoint election. Lagging behind neighbors get the rights to vote on front-runners' blockchains not only because they are currently active but also because they have received tokens (or ballots) from the latter. A voting peer then creates sub-tokens from its token and propagates them to its neighbors. A hierarchy of sub-tokens can be created in this manner based on the idea of hierarchical credential delegation presented in \cite{Ding1996}. A voting peer registers its vote by submitting the token (or sub-token) of its choice to the support service.
+
+If a token and its sub-tokens are increasingly labeled based on the depth of the delegation path and the total reward for casting a vote on the checkpoint winner blockchain ledger is $F$ then the reward for casting a specific sub-token of depth $k$ in favor of the winner blockchain is distributed according to the following formula:
+
+\begin{subnumcases}
+{f_{[i]}^{k}=}
+F \times C(1 - C)^{i - 1}\ \ \ \forall i < k\\
+F \times (1 - C)^{k - 1}\ \ \ \ \ \ i = k   
+\end{subnumcases}
+
+Here $f_{[i]}^{k}$ represents the reward for the $i^{th}$ peer on the token delegation path and $C$ is any suitably choosen fractional constant. Sybil attack resistance \cite{Douceur:2002:SA:646334.687813} and game theoretic soundness of this reward distribution scheme is discussed by the scheme's authors in \cite{propagation}.  
+           

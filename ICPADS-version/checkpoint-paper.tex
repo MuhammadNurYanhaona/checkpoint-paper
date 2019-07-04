@@ -1,0 +1,123 @@
+\documentclass[conference]{IEEEtran}
+
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\usepackage{cite, url}
+% Enable the following line if you want highlighted hyperlink to citation and references
+%\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+\usepackage{cases}
+\usepackage{amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+% for code import
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{ctable}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{setspace}
+
+\lstdefinelanguage{pseudo} {
+                morekeywords={func},
+                morekeywords={[2]if, while, for, else, break, return, in},
+                morekeywords={[3]true, false, nil},
+                morekeywords={[4]async},
+                sensitive=true,
+                morecomment=[l]{//}
+}
+
+\lstset{language=pseudo,
+                basicstyle={\scriptsize\singlespacing},
+                keywordstyle={\footnotesize\itshape\color[rgb]{0.1,0.1,0.9}},
+                keywordstyle=[2]{\footnotesize\itshape\color[rgb]{0.9,0.1,0.1}},
+                keywordstyle=[3]{\itshape\color[rgb]{0.1,0.5,0.1}},
+                keywordstyle=[4]{\bf\itshape\color[rgb]{0.2,0.5,0.9}},
+                numbers=left,
+                tabsize=4,
+                numbersep=4pt,
+                basewidth=0.48em,
+                commentstyle=\color[rgb]{0.1,0.4,0.1},
+                xleftmargin=0.3cm,
+                captionpos=b
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Transaction Finality through Ledger Checkpoints 
+	\thanks{This research is funded by KONA Software Lab, Ltd.}
+}
+
+\author{
+	\IEEEauthorblockN{Ratul Antik Das}
+	\IEEEauthorblockA{\textit{Research and Development} \\
+	\textit{Kona Software Lab}\\
+		Dhaka, Bangladesh \\
+		ratul.antik@konasl.com}
+	\and		
+	\IEEEauthorblockN{Md. Muhaimin Shah Pahalovi}
+	\IEEEauthorblockA{\textit{Research and Development} \\
+	\textit{Kona Software Lab}\\
+		Dhaka, Bangladesh \\
+		muhaimin.shah@konasl.com}		
+	\and
+	\IEEEauthorblockN{Muhammad Nur Yanhaona}
+	\IEEEauthorblockA{\textit{Research and Development} \\
+	\textit{Kona Software Lab}\\
+		Dhaka, Bangladesh \\
+		nur.yanhaona@konasl.com}
+}
+\maketitle
+
+\begin{abstract}
+Reversal of transactions due to blockchain ledger reorganization has become a major hindrance for public blockchain technologies' adoption in real-world business and financial applications. Since a typical real-world product, service, or agreement cannot be reverted; associated transactions in the blockchain ledger must also be final. This paper describes and analyzes the transaction finality solution for our proof of work (PoW) mining based blockchain network, the Kona Blockchain Platform. The solution works even if 49\% of the network's total mining power is compromised due to malicious attacks. Although designed for our specific platform, the ideas from the solution can be easily adapted to achieve transaction finality in existing public blockchain networks. This paper also discusses how this can be done. To the best of our knowledge, ours is the first solution for deterministic transaction finality for blockchain networks incentivised exclusively by PoW mining.    
+\end{abstract}
+
+\begin{IEEEkeywords}
+Computer Networks, peer-to-peer computing, distributed information systems, Fault tolerance, Protocols
+\end{IEEEkeywords}
+
+\input{introduction.tex}
+
+\input{related-work.tex}
+
+\input{pow-incentive.tex}    
+
+\input{problem-model.tex}
+
+\input{algorithm.tex}    
+        
+\input{fitness-analysis.tex}
+
+\input{implementation.tex}
+
+\section{Conclusion}
+\label{s-conclusion}
+Transaction finality guarantee for blockchain ledger is important for blockchain technology's adoption in recording and enforcing real world financial and business matters where actions are seldom reversible. This paper presented and analyzed our transaction finality solution for the \textit{KONA blockchain network:} a proof of work (PoW) mining based public blockchain network with smart contract support and authorized mining nodes. We provide transaction finality by establishing network-wide consensus about an irreversible ledger state -- we call a \textit{checkpoint} -- at deterministic intervals. The consequent transaction finality protocol is called the \textit{checkpoint protocol}.   
+
+We introduced a notion of a distributed support service in the blockchain network that is responsible for recording heartbeat messages from the active mining peers for population estimation and for tracking the progress of the checkpoint establishment process. A network-wide consensus about a checkpoint is reached by a $51\%$ majority voting on a fair ledger election process by the active mining population and recorded through their heartbeat message exchanges with the support service. The nature of interactions with the support service ensures that mining peers know about the global state of the network within a bounded time and no broadcast is needed for a consensus establishment. 
+
+There is room for future improvement of our checkpoint protocol. Interested researchers can investigate how to reduce both the number of rounds and the timespan of individual rounds and still guarantee a convergence. The most challenging improvement will be to eliminate the support service nodes altogether and modify the PoW incentive of the mining nodes in such a manner that they can change their network connectivity and participation behavior at periodic intervals to establish checkpoints on their own   
+  
+
+\bibliographystyle{plain}
+\bibliography{references.bib}
+
+\end{document}
