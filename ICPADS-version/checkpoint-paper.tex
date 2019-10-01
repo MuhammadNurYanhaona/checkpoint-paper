@@ -62,7 +62,7 @@
 \begin{document}
 
 \title{Transaction Finality through Ledger Checkpoints 
-	\thanks{This research is funded by KONA Software Lab, Ltd.}
+	\thanks{This research is funded by KONA Software Lab Ltd.}
 }
 
 \author{
@@ -87,7 +87,7 @@
 \maketitle
 
 \begin{abstract}
-Reversal of transactions due to blockchain ledger reorganization has become a major hindrance for public blockchain technologies' adoption in real-world business and financial applications. Since a typical real-world product, service, or agreement cannot be reverted; associated transactions in the blockchain ledger must also be final. This paper describes and analyzes the transaction finality solution for our proof of work (PoW) mining based blockchain network, the Kona Blockchain Platform. The solution works even if 49\% of the network's total mining power is compromised due to malicious attacks. Although designed for our specific platform, the ideas from the solution can be easily adapted to achieve transaction finality in existing public blockchain networks. This paper also discusses how this can be done. To the best of our knowledge, ours is the first solution for deterministic transaction finality for blockchain networks incentivised exclusively by PoW mining.    
+The reversal of transactions due to blockchain ledger reorganization has become a major hindrance for public blockchain technologies' adoption in real-world business and financial applications. Since a typical real-world product, service, or agreement cannot be reversed; associated transactions in the blockchain ledger must also be final. This paper describes and analyzes the transaction finality solution for our proof of work (PoW) mining based blockchain network, the Kona Blockchain Platform. The solution works even if 49\% of the network's total mining power is compromised due to malicious attacks. Although designed for our specific platform, the ideas from the solution can be easily adapted to achieve transaction finality in existing public blockchain networks. This paper also discusses how this can be done. To the best of our knowledge, ours is the first solution for deterministic transaction finality for blockchain networks incentivized exclusively by PoW mining.    
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -112,9 +112,9 @@ Computer Networks, peer-to-peer computing, distributed information systems, Faul
 \label{s-conclusion}
 Transaction finality guarantee for blockchain ledger is important for blockchain technology's adoption in recording and enforcing real world financial and business matters where actions are seldom reversible. This paper presented and analyzed our transaction finality solution for the \textit{KONA blockchain network:} a proof of work (PoW) mining based public blockchain network with smart contract support and authorized mining nodes. We provide transaction finality by establishing network-wide consensus about an irreversible ledger state -- we call a \textit{checkpoint} -- at deterministic intervals. The consequent transaction finality protocol is called the \textit{checkpoint protocol}.   
 
-We introduced a notion of a distributed support service in the blockchain network that is responsible for recording heartbeat messages from the active mining peers for population estimation and for tracking the progress of the checkpoint establishment process. A network-wide consensus about a checkpoint is reached by a $51\%$ majority voting on a fair ledger election process by the active mining population and recorded through their heartbeat message exchanges with the support service. The nature of interactions with the support service ensures that mining peers know about the global state of the network within a bounded time and no broadcast is needed for a consensus establishment. 
+We introduced a notion of a distributed support service in the blockchain network that is responsible for recording heartbeat messages of the active mining peers for population estimation and to track the progress of the checkpoint establishment process. A network-wide consensus about a checkpoint is reached by a $51\%$ majority voting on a fair ledger election process by the active mining population and recorded through their heartbeat message exchanges with the support service. The nature of interactions with the support service ensures that mining peers know about the global state of the network within a bounded time and no broadcast is needed for a consensus establishment. 
 
-There is room for future improvement of our checkpoint protocol. Interested researchers can investigate how to reduce both the number of rounds and the timespan of individual rounds and still guarantee a convergence. The most challenging improvement will be to eliminate the support service nodes altogether and modify the PoW incentive of the mining nodes in such a manner that they can change their network connectivity and participation behavior at periodic intervals to establish checkpoints on their own   
+There is room for future improvement of our checkpoint protocol. Interested researchers can investigate how to reduce both the number of rounds and the timespan of individual rounds and still guarantee a convergence. The most challenging improvement will be to eliminate the support service nodes altogether and modify the PoW incentive of the mining nodes in such a manner that they can change their network connectivity and participation behavior at periodic intervals to establish checkpoints on their own.   
   
 
 \bibliographystyle{plain}

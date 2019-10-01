@@ -1,7 +1,7 @@
 func votingRound(currC, currVCert, round) {
 	knownCandidates = {}
 	// if peer's selected candidate is not eliminated in the last round
-	// then starts new the round with the selected candidate 
+	// then starts the new round with the selected candidate 
 	if (currC != nil) knownCandidates = {currC.candidate}
 	// based on a heartbeat message acknowledgement counter peer should
 	// know when the voting round should be ended
