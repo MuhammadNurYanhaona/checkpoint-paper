@@ -1,0 +1,188 @@
+func miningModeHeartbeatProcessor(heartbeat, miner) {
+	N = getMinerCountEstimate()
+	if (heartbeat.type == CHECKPOINT_VOTE) {
+		if (!recordedAsActive(miner)) {
+			return NACK
+		}
+		updateLastExchangeTime(miner)
+		vCert = recordEncodedVote(heartbeat.vote)
+		c = countCastBallots()
+		if (c >= N/2) {
+			initiateCheckpointConsensus()
+		}
+	} else  {
+		updateLastExchangeTime(miner)
+		ack = generateAck(heartbeat)
+		return ack	
+	}
+}
+
+
+func initiateCheckpointConsensus() {
+	
+	setHeartbeatProcessor(checkpointHeartbeatProcessor)
+	N = getMinerCountEstimate()
+	votingRoundTerminator = initCountDownCounter(N/2) 
+	consensusEstablished = false
+
+	do {
+		waitForReachingZero(votingRoundTerminator)
+
+		setHeartbeatProcessor(voteRevealHeartbeatProcessor)
+		voteRevelationCounter = initCountDownCounter(ACTIVATION_WINDOW)
+		waitForReachingZero(voteRevelationCounter)
+		
+		stat = checkForSingleMajority()
+		if (stat == true) {
+			publishResultWithSealingMaterials()
+			consensusEstablished = true
+		} else {
+			publishResultWithCandidateFilter()
+			resetCounterTo(N)
+		}
+	
+	} while(!consensusEstablished)
+
+	clearVoteDatabase()
+	updateCheckpointCounter()
+	setHeartbeatProcessor(miningModeHeartbeatProcessor)
+}
+
+
+func votingCycle(currC, currVCert, round) {
+	knownCandidates = empty
+	if (currC != nil) knownCandidates = {currC.candidate}
+	while(votingNotEnded()) {
+		S = getNewCandidates()
+		if (empty(S)) {
+			stat = getLastHeartbeatStat()
+			if (stat.candadates != nil) {
+				S = probeCandidates(stat.candidates)
+			}
+		}
+		F = filterCandidateByRound(S, round)
+		b = selectBest(F)
+		if (b != nil && !in(knownCandidates, b) 
+				&& (currC = nil || isBetter(b, currC))) {
+			updateLedger(b)
+			currC = b	
+			currVCert = castVote(b)
+			knownCandidates =  knownCandidates + {b}
+			seekVotes(b, getNeighborPeers())
+		} else if (currC != nil) {
+			currVCert = retainVote()
+			nn = getNewNeighbors()
+			seekVotes(currC, nn)
+		}
+	}
+	revealVote(currC)
+
+	return currVCert
+}
+
+func votingNotEnded() {
+	stat = getLastHeartbeatAckStat()
+	if (stat.mode != CHEK_POINTING_INITATED) return true
+	else if (state.counter > 0) {
+		return false
+	}		
+}
+
+func waitForConsensus(initialVoteCert, initialToken) {
+
+	round = 0
+	currToken = initialToken
+	currVCert = initialVoteCert
+
+	setLocalMode(CHECK_POINTING)
+	
+	while (true) {
+		lastVoteCert = votingCycle(currToken, currVCert, round)
+		winner = verifySingleMajority()
+		if (winner != nil) {
+			if (latVoteCert.candidate == winner) {
+				block = getCheckpointBlock()
+				addCheckpointBlock(ledger, block)
+				break
+			} else {
+				syncWithWinner(winner)
+				break
+			}
+		} else {
+			round++
+			if (eliminated(lastVoteCert, round)) {
+				currToken, currVCert = nil
+			}
+		}
+	}
+
+	setLocalMode(MINING)
+}
+
+func seekVotes(token, neighbors) {
+	l = currentLedger()
+	for n in neigbors {
+		if (notInDelegationPath(n, token)) {
+			st = createSubToken(token, n)
+			async requestVote(st, l)
+		}
+	}	
+}
+
+func initCheckpointProtocol(heartBeatAck) {
+	l = currentLedger()
+	t = createToken(heartBeatAck, l)
+	seekVotes(t, getNeighborPeers())
+	voteCert = castVote(t)
+	waitForConsensus(voteCert, t)
+}
+
+func exchangeHeartbeats() {
+	ch = 0
+	while(true) {
+
+		mode = getLocalMode()
+		p = getCurrHeartbeatPayload()
+		s =  nil
+		if (ch != nil) {
+			s = solvePoWChallenge(ch)
+		}
+
+		ack = sendHeartbeat(p, s)
+		registerHeartbeatAck(ack)
+		ch = getNextChallenge(ack)
+
+		if (ack.stat.mode == CHECK_POINTING_INITIATED && mode == MINING) {
+			stopMining()
+			async waitForConsensus(nil, nil)			
+		}
+	}	
+}
+
+func handlePeerCommunication() {
+	while (true) {
+		msg = acceptMessage()
+		p = msg.peer
+		Switch msg.action {
+			case NewPeerRequest:
+				doProtocolHandshake()
+				addNewNeighbor(p)
+			case CheckpointVoteRequest:
+				f = validateCheckpointCandidacy(p)
+				if (f == true) {
+					addCheckpointCandidate(p)
+					mode = getLocalMode()
+					if (mode == MINING) {
+						stopMining()
+						async waitForConsensus(nil, nil)
+					}
+				} else {
+					addToMaliciousPeerList(p)
+				}
+				break
+			default:
+				processPeerForMiningSync(p)
+		}
+	}
+}
+

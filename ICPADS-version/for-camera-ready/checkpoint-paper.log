@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  1 OCT 2019 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.24)  3 OCT 2019 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,89 +7,112 @@ entering extended mode
 LaTeX2e <2017-04-15>
 Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
 (./IEEEtran.cls
-Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
 \@IEEEtrantmpcountA=\count79
 \@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
-\@IEEEnormalsizeunitybaselineskip=\dimen104
+\@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
-\CLASSINFOnormalsizebaselineskip=\dimen105
-\CLASSINFOnormalsizeunitybaselineskip=\dimen106
-\IEEEnormaljot=\dimen107
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
-\IEEEilabelindentA=\dimen108
-\IEEEilabelindentB=\dimen109
-\IEEEilabelindent=\dimen110
-\IEEEelabelindent=\dimen111
-\IEEEdlabelindent=\dimen112
-\IEEElabelindent=\dimen113
-\IEEEiednormlabelsep=\dimen114
-\IEEEiedmathlabelsep=\dimen115
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
 \IEEEiedtopsep=\skip41
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@IEEEsubequation=\count85
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
 \abovecaptionskip=\skip42
 \belowcaptionskip=\skip43
-\c@figure=\count86
-\c@table=\count87
-\@IEEEeqnnumcols=\count88
-\@IEEEeqncolcnt=\count89
-\@IEEEtmpitemindent=\dimen116
-\c@IEEEbiography=\count90
-\@IEEEtranrubishbin=\box26
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
 )
 ** ATTENTION: Overriding command lockouts (line 3).
 (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
@@ -112,46 +135,46 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
-\ex@=\dimen117
+\ex@=\dimen126
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen118
+\pmbraise@=\dimen127
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count91
+\inf@bad=\count94
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count92
-\leftroot@=\count93
+\uproot@=\count95
+\leftroot@=\count96
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count94
-\DOTSCASE@=\count95
+\classnum@=\count97
+\DOTSCASE@=\count98
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen119
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen128
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
 \dotsspace@=\muskip11
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
 \tag@help=\toks16
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
 \andhelp@=\toks17
-\eqnshift@=\dimen120
-\alignsep@=\dimen121
-\tagshift@=\dimen122
-\tagwidth@=\dimen123
-\totwidth@=\dimen124
-\lineht@=\dimen125
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
 \@envbody=\toks18
 \multlinegap=\skip45
 \multlinetaggap=\skip46
@@ -179,10 +202,10 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 )
-\c@ALC@unique=\count103
-\c@ALC@line=\count104
-\c@ALC@rem=\count105
-\c@ALC@depth=\count106
+\c@ALC@unique=\count106
+\c@ALC@line=\count107
+\c@ALC@rem=\count108
+\c@ALC@depth=\count109
 \ALC@tlm=\skip47
 \algorithmicindent=\skip48
 )
@@ -203,8 +226,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen126
-\Gin@req@width=\dimen127
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
@@ -728,35 +751,35 @@ File: babel.def 2017/06/29 3.12 Babel common definitions
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2017/06/29 3.12 Babel switching mechanism
 )
-\babel@savecnt=\count107
-\U@D=\dimen128
+\babel@savecnt=\count110
+\U@D=\dimen137
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-\c@theorem=\count108
-\c@corollary=\count109
+\c@theorem=\count111
+\c@corollary=\count112
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count110
-\lst@gtempboxa=\box29
+\lst@mode=\count113
+\lst@gtempboxa=\box30
 \lst@token=\toks29
-\lst@length=\count111
-\lst@currlwidth=\dimen129
-\lst@column=\count112
-\lst@pos=\count113
-\lst@lostspace=\dimen130
-\lst@width=\dimen131
-\lst@newlines=\count114
-\lst@lineno=\count115
-\lst@maxwidth=\dimen132
+\lst@length=\count114
+\lst@currlwidth=\dimen138
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen139
+\lst@width=\dimen140
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen141
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count116
-\lst@skipnumbers=\count117
-\lst@framebox=\box30
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
+\lst@framebox=\box31
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -771,16 +794,16 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count118
+\FV@CodeLineNo=\count121
 \FV@InFile=\read1
-\FV@TabBox=\box31
-\c@FancyVerbLine=\count119
-\FV@StepNumber=\count120
+\FV@TabBox=\box32
+\c@FancyVerbLine=\count122
+\FV@StepNumber=\count123
 \FV@OutFile=\write3
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen133
-\extrarowheight=\dimen134
+\col@sep=\dimen142
+\extrarowheight=\dimen143
 \NC@list=\toks30
 \extratabsurround=\skip52
 \backup@length=\skip53
@@ -799,7 +822,7 @@ Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count121
+\etb@tempcnta=\count124
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
@@ -809,45 +832,45 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks32
 \XKV@tempa@toks=\toks33
 )
-\XKV@depth=\count122
+\XKV@depth=\count125
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
-\TX@col@width=\dimen135
-\TX@old@table=\dimen136
-\TX@old@col=\dimen137
-\TX@target=\dimen138
-\TX@delta=\dimen139
-\TX@cols=\count123
+\TX@col@width=\dimen144
+\TX@old@table=\dimen145
+\TX@old@col=\dimen146
+\TX@target=\dimen147
+\TX@delta=\dimen148
+\TX@cols=\count126
 \TX@ftn=\toks34
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen140
-\lightrulewidth=\dimen141
-\cmidrulewidth=\dimen142
-\belowrulesep=\dimen143
-\belowbottomsep=\dimen144
-\aboverulesep=\dimen145
-\abovetopsep=\dimen146
-\cmidrulesep=\dimen147
-\cmidrulekern=\dimen148
-\defaultaddspace=\dimen149
-\@cmidla=\count124
-\@cmidlb=\count125
-\@aboverulesep=\dimen150
-\@belowrulesep=\dimen151
-\@thisruleclass=\count126
-\@lastruleclass=\count127
-\@thisrulewidth=\dimen152
+\heavyrulewidth=\dimen149
+\lightrulewidth=\dimen150
+\cmidrulewidth=\dimen151
+\belowrulesep=\dimen152
+\belowbottomsep=\dimen153
+\aboverulesep=\dimen154
+\abovetopsep=\dimen155
+\cmidrulesep=\dimen156
+\cmidrulekern=\dimen157
+\defaultaddspace=\dimen158
+\@cmidla=\count127
+\@cmidlb=\count128
+\@aboverulesep=\dimen159
+\@belowrulesep=\dimen160
+\@thisruleclass=\count129
+\@lastruleclass=\count130
+\@thisrulewidth=\dimen161
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count128
+\c@r@tfl@t=\count131
 \rotFPtop=\skip55
 \rotFPbot=\skip56
-\rot@float@box=\box32
+\rot@float@box=\box33
 \rot@mess@toks=\toks35
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/transparent.sty
@@ -857,33 +880,33 @@ Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 ))
-\@CTframesep=\dimen153
-\@dfltCTframesep=\dimen154
-\@CTframerule=\dimen155
-\@dfltCTframerule=\dimen156
-\@CTwidth=\dimen157
-\@dfltCTwidth=\dimen158
-\@CTcaptionskip=\dimen159
-\@dfltCTcaptionskip=\dimen160
-\@CTmaxwidth=\dimen161
-\@dfltCTmaxwidth=\dimen162
-\@CTmincapwidth=\dimen163
-\@dfltCTmincapwidth=\dimen164
-\@CTfooterwidth=\dimen165
-\@dfltCTfooterwidth=\dimen166
-\@CTw=\dimen167
-\@CTfloatwidth=\dimen168
-\@CToldsep=\dimen169
-\@CToldrule=\dimen170
-\CT@t=\box33
-\@CTcurftwidth=\dimen171
+\@CTframesep=\dimen162
+\@dfltCTframesep=\dimen163
+\@CTframerule=\dimen164
+\@dfltCTframerule=\dimen165
+\@CTwidth=\dimen166
+\@dfltCTwidth=\dimen167
+\@CTcaptionskip=\dimen168
+\@dfltCTcaptionskip=\dimen169
+\@CTmaxwidth=\dimen170
+\@dfltCTmaxwidth=\dimen171
+\@CTmincapwidth=\dimen172
+\@dfltCTmincapwidth=\dimen173
+\@CTfooterwidth=\dimen174
+\@dfltCTfooterwidth=\dimen175
+\@CTw=\dimen176
+\@CTfloatwidth=\dimen177
+\@CToldsep=\dimen178
+\@CToldrule=\dimen179
+\CT@t=\box34
+\@CTcurftwidth=\dimen180
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip57
-\multirow@cntb=\count129
+\multirow@cntb=\count132
 \multirow@dima=\skip58
-\bigstrutjot=\dimen172
+\bigstrutjot=\dimen181
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -911,18 +934,19 @@ File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 62.
 
+-- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
-\scratchdimen=\dimen173
-\scratchbox=\box34
-\nofMPsegments=\count131
-\nofMParguments=\count132
+\scratchcounter=\count133
+\scratchdimen=\dimen182
+\scratchbox=\box35
+\nofMPsegments=\count134
+\nofMParguments=\count135
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count133
-\MPscratchDim=\dimen174
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen183
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
 \everyMPtoPDFconversion=\toks37
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -976,9 +1000,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count136
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
+\c@lstlisting=\count139
 
 (./introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -993,22 +1015,19 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2])
-(./pow-incentive.tex
-** ATTENTION: \proof is deprecated (line 16). Use \IEEEproof instead.
-) (./problem-model.tex [3]
-Underfull \hbox (badness 1377) in paragraph at lines 12--13
-\OT1/ptm/m/n/10 and $\OML/cmm/m/it/10 c$ \OT1/ptm/m/n/10 is the last check-poin
-t block hash. Fur-ther, let
+)
+Underfull \hbox (badness 1436) in paragraph at lines 5--6
+[]\OT1/ptm/m/n/10 However, ex-ist-ing blockchain con-sen-sus pro-to-cols that
  []
 
-[4]) (./algorithm.tex
-Underfull \hbox (badness 1448) in paragraph at lines 7--8
-[]\OT1/ptm/m/n/10 A net-work peer $\OML/cmm/m/it/10 p$ \OT1/ptm/m/n/10 eval-u-a
-tes all vot-ing re-quests,
+
+Underfull \hbox (badness 1565) in paragraph at lines 7--8
+[]\OT1/ptm/m/n/10 The fore-run-ner of the \OT1/ptm/m/it/10 busi-ness blockchain
+ move-ment\OT1/ptm/m/n/10 ,
  []
 
-[5] (./miners-perspective.go
+) (./pow-incentive.tex [2]) (./problem-model.tex [3] [4]) (./algorithm.tex
+(./miners-perspective.go
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
@@ -1016,42 +1035,11 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
-
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 3--4
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
- 
- []
-
-
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 6--7
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 16--17
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.90247pt too wide) in paragraph at lines 43--44
+ [5]
+Overfull \hbox (1.81372pt too wide) in paragraph at lines 43--44
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][] 
- []
-
-
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 50--51
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][] 
- []
-
-
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 82--83
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 LaTeX Font Info:    Try loading font information for OML+ptm on input line 87.
@@ -1062,87 +1050,35 @@ LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <7> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 87.
 )
 (./support-service-perspective.go
-Overfull \hbox (6.5425pt too wide) in paragraph at lines 8--9
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][] 
- []
-
-
-Overfull \hbox (9.90247pt too wide) in paragraph at lines 10--11
+Overfull \hbox (1.81372pt too wide) in paragraph at lines 10--11
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 18--19
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[6]
-Overfull \hbox (9.90247pt too wide) in paragraph at lines 41--42
+Overfull \hbox (1.81372pt too wide) in paragraph at lines 41--42
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 58--59
-[][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (3.18253pt too wide) in paragraph at lines 69--70
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-))
-(./fitness-analysis.tex
-** ATTENTION: \proof is deprecated (line 12). Use \IEEEproof instead.
-[7]
-** ATTENTION: \proof is deprecated (line 22). Use \IEEEproof instead.
-** ATTENTION: \proof is deprecated (line 32). Use \IEEEproof instead.
-** ATTENTION: \proof is deprecated (line 50). Use \IEEEproof instead.
-[8]
-** ATTENTION: \proof is deprecated (line 68). Use \IEEEproof instead.
-) (./implementation.tex
-Underfull \vbox (badness 7759) has occurred while \output is active []
+ [6]))
+(./fitness-analysis.tex [7] [8]) (./implementation.tex
+Underfull \vbox (badness 2245) has occurred while \output is active []
 
- [9]
-Underfull \hbox (badness 4441) in paragraph at lines 9--10
-[]\OT1/ptm/m/n/10 The sup-port ser-vice nodes will be loosely time-
- []
-
-) [10] (./checkpoint-paper.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 9--13
-\OT1/ptm/m/n/9 ethereum / wiki / wiki / Casper-[]Proof-[]of-[]Stake-[]compendiu
-m$.
+ [9])
+(./checkpoint-paper.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/ptm/m/n/8 Bitcoin en-ergy con-sump-tion in-dex.  $https : / / digiconomi
+st . net /
  []
 
 
-Underfull \hbox (badness 7133) in paragraph at lines 15--18
-[]\OT1/ptm/m/n/9 Gossip pro-to-col.  $https : / / en . wikipedia . org / wiki /
- Gossip[]
- []
-
-
-Underfull \hbox (badness 6316) in paragraph at lines 20--24
-[]\OT1/ptm/m/n/9 How blockchains could change the world.  $https :
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--24
-\OT1/ptm/m/n/9 / / www . mckinsey . com / industries / high-[]tech / our-[]insi
-ghts /
- []
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 136--141
-[]\OT1/ptm/m/n/9 K. Saito and H. Ya-mada.  What's so dif-fer-ent about
+Underfull \hbox (badness 7203) in paragraph at lines 26--29
+[]\OT1/ptm/m/n/8 Top 100 cryp-tocur-ren-cies by mar-ket cap-i-tal-iza-tion.  $h
+ttps : / /
  []
 
 )
@@ -1157,38 +1093,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[11] (./checkpoint-paper.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[10] (./checkpoint-paper.aux) ) 
 Here is how much of TeX's memory you used:
- 8521 strings out of 492990
- 116835 string characters out of 6135005
- 306430 words of memory out of 5000000
- 11860 multiletter control sequences out of 15000+600000
- 47077 words of font info for 96 fonts, out of 8000000 for 9000
+ 8651 strings out of 492990
+ 120039 string characters out of 6135005
+ 306834 words of memory out of 5000000
+ 11997 multiletter control sequences out of 15000+600000
+ 43848 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,72p,1353b,1549s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on checkpoint-paper.pdf (11 pages, 225719 bytes).
+ 41i,8n,72p,1353b,1569s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/b
+ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on checkpoint-paper.pdf (10 pages, 225995 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
